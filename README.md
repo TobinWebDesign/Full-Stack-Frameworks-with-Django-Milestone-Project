@@ -1,5 +1,8 @@
 # Milestone Project 4
-***
+
+## Yoga4life - Online yoga studio
+
+#### Membership, dropin classes, eCommerece - Tourotials
 
 ## Table of Contents:
 * [What does it do and what does it need to fulfill?](#what-does-it-do-and-what-does-it-need-to-fulfill)
@@ -48,13 +51,29 @@ This application contains ....
 
 #### User Stories:
 _Generic (Guest/Public) User:_
-* As a Generic User, I want to...
+ As a Generic User, I want to be able to view the site on any device I may have, (mobile/tablet/desktop).
+* As a Generic User, I want to have the ability to register to the site.
+* As a Generic User, I want to have the ability to research the business and anything associated with same through the application.
+* As a Generic User, I want to have the ability to view the established Accessibility Statement & Privacy Policy if any.
+* As a Generic User, I want to be able to view available Membership prices.
+* As a Generic User, I want to be able to view available Drop-in prices.
+* As a Generic User, I want to be able to get in contact with the business owner through the website.
+* As a Generic User, I want to have the ability to see the established social accounts coupled with the business, eg: Facebook, Instagram etc.
+* As a Generic User, I want to have information available as to the directions of the business site.
 
 _Registers (Logged in) User:_
-* As a Registered User, I want to...
+* As a Registered User, I want to have the ability to Login to the site via my registered details.
+* As a Registered User, I want to have the ability to review membership options and but choose one.
+* As a Registered User, I want to be able to view my Cart and any items I currently have awaiting payment in my Cart.
+* As a Registered User, I want to be able to items currently added to my Cart.
+* As a Registered User, I want to have the ability to Logout of the application.
 
-_Developer:_
-* As a Developer, I want to...
+_Application Owner/Administrator User:_
+* As a Site Administrator, I want to be able to login to an administration panel.
+* As a Site Administrator, I want to have the ability to update site content, i.e Membership packages.
+* As the Owner, I want to ensure any user navigating to my site has a positive User experience between content and responsive design.
+* As the Owner, I want to show any user navigating to my site the facilities, services & pricing available.
+
 
 #### Design
 
