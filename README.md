@@ -187,7 +187,11 @@ The project boasts several key features:
 
 ## Testing
 
-Testing was ...
+Testing django allauth:
+* Change LOGIN_REDIRECT_URL to "/success"
+* Run the server with "python3 manage.py runserver", open the project, and navigate to /accounts/login. 
+* Login using verified username
+* Confirm that authentication is working properly when we get 404 page with the /success url.
 
 #### Found Bugs and Fixes:
 
