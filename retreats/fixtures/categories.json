@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "retreats.category", "fields": {"name": "yoga", "friendly_name": "Yoga"}}, {"pk": 2, "model": "retreats.category", "fields": {"name": "surf_yoga", "friendly_name": "Surf & Yogah"}}, {"pk": 3, "model": "retreats.category", "fields": {"name": "meditation", "friendly_name": "Meditation"}}]

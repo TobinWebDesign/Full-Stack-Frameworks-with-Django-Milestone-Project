@@ -55,7 +55,7 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #0f161f;
+    background: #88583d;
     color: white;
 }
 
@@ -118,6 +118,17 @@ body {
     .header-container {
         padding-top: 164px;
     }
+
+}
+
+@media (max-width: 992px){
+    .hero {
+    background: url('/media/Milestone project Hero Image.png') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh);
+    width: 100%;
+    color: #555;
+    font-family: 'Roboto', sans-serif;
 }
 
 @media (max-width: 479px) {
