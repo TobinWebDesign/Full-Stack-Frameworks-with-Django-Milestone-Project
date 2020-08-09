@@ -16,9 +16,9 @@
                 Retreats
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="retreats-link">
-                <a href="" class="dropdown-item">Yoga</a>
-                <a href="" class="dropdown-item">Meditation</a>
-                <a href="" class="dropdown-item">Yoga and Surf</a>
+                <a href="{% url 'retreats' %}?category=yoga" class="dropdown-item">Yoga</a>
+                <a href="{% url 'retreats' %}?category=meditation" class="dropdown-item">Meditation</a>
+                <a href="{% url 'retreats' %}?category=surf_yoga" class="dropdown-item">Yoga and Surf</a>
                  <a href="{% url 'retreats' %}" class="dropdown-item">All Retreats</a>
             </div>
         </li>

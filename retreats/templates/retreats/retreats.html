@@ -40,14 +40,14 @@
                                 <div class="card-body pb-0">
                                     <p class="mb-0">{{ retreat.name }}</p>
                                 </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <div class="card-footer pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
                                             <p class="lead mb-0 text-left font-weight-bold">${{ retreat.price }}</p>
                                             {% if retreat.rating %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ retreat.rating }} / 5</small>
+                                                <small class="text-gold"><i class="fas fa-star mr-1"></i>{{ retreat.rating }} / 5</small>
                                             {% else %}
-                                                <small class="text-muted">No Rating</small>
+                                                <small class="text-gold">No Rating</small>
                                             {% endif %}
                                         </div>
                                     </div>
