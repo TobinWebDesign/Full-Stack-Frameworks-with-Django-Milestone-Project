@@ -1,0 +1,120 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/media/Milestone project Hero Image.png') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #555;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hero {
+    background: url('/media/Milestone project Hero Image.png') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #555;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.logo-font {
+    text-transform: uppercase;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+.shop-now-button {
+    background:white;
+    color: #0f161f;
+    min-width: 260px;
+}
+
+.btn-black {
+    background: #0f161f;
+    color: white;
+}
+
+.btn-brown {
+    background: #88583d;
+    color: white;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #0f161f;
+    color: white;
+}
+
+
+.btn-brown:hover,
+.btn-brown:active,
+.btn-brown:focus {
+    background:#b28262;
+    color: white;
+}
+
+.text-pink {
+    color:#c6aaa0 !important;
+}
+
+.text-brown {
+    color: #88583d;
+}
+
+.text-black {
+    color:#0f161f !important;
+}
+
+.text-brown:hover,
+.text-brown:active,
+.text-brown:focus {
+    color:#b28262;
+}
+
+.border-black {
+    border: 1px solid#0f161f !important;
+}
+
+.border-brown {
+    border: 1px solid #88583d !important;
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
