@@ -4,6 +4,7 @@ html {
 
 body {
     height: calc(100vh - 164px);
+    background-color:#c6aaa0;
     color: #555;
     font-family: 'Roboto', sans-serif;
 }
@@ -27,6 +28,7 @@ body {
 
 .logo-font {
     text-transform: uppercase;
+    color: white;
 }
 
 .main-logo-link {
@@ -96,6 +98,32 @@ body {
 .bg-brown {
     background: #88583d;
 }
+
+.card {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.retreat-details-container {
+    padding: 20px;
+}
+/* ---------------------------Make images Square */
+.image{
+    position:relative;
+    overflow:hidden;
+    padding-bottom:100%;
+}
+.image img{
+      position: absolute;
+      max-height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+}
+
+.card-img-top {
+    width: auto;
+}
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -121,6 +149,7 @@ body {
 
 }
 
+/* mobile hero section */
 @media (max-width: 992px){
     .hero {
     background: url('/media/Milestone project Hero Image.png') no-repeat center center fixed;
@@ -131,8 +160,20 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* navlinks on mobile */
 @media (max-width: 479px) {
     .nav-link {
         font-size: 10px !important;
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
     }
 }
