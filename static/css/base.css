@@ -41,6 +41,12 @@ body {
     min-width: 260px;
 }
 
+.shop-now-button-brown {
+    background: #88583d;
+    color:white;
+    min-width: 260px;
+}
+
 .btn-black {
     background: #0f161f;
     color: white;
@@ -51,6 +57,14 @@ body {
     color: white;
 }
 
+.btn-white {
+    background: white;
+    color: #88583d;
+}
+
+.btn-white:hover,
+.btn-white:active,
+.btn-white:focus,
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -61,12 +75,31 @@ body {
     color: white;
 }
 
+.shop-now-button-brown:hover,
+.shop-now-button-brown:active,
+.shop-now-button-brown:focus {
+    background:#b28262;
+    color: white;
+}
 
 .btn-brown:hover,
 .btn-brown:active,
 .btn-brown:focus {
     background:#b28262;
     color: white;
+}
+
+.btn-outline-brown {
+    background: rgba(255, 255, 255, 0);
+    color:  #88583d !important; /* use important to override link colors for <a> elements */
+    border: 1px solid  #88583d;
+}
+
+.btn-outline-brown:hover,
+.btn-outline-brown:active,
+.btn-outline-brown:focus {
+    background: white;
+    color: #88583d !important;
 }
 
 .text-pink {
