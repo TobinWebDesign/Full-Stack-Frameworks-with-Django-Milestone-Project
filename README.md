@@ -88,11 +88,11 @@ The secondary font of Lato has a natural flow...
 ##### 2. Color Scheme
 This project went through multiple theme iterations whilst in Wireframe stage. Ultimately, I was always lead back to professional high contrast finish that would normally be seen in most day-to-day apps with a touch of pastel color to highlight to the user the breakaway elements.
 
-* ![#000000](https://placehold.it/15/000000/000000?text=+) `#000000` - Primary color
-* ![#432344](https://placehold.it/15/432344/000000?text=+) `#432344` - Secondary color
-* ![#ffc03d](https://placehold.it/15/ffc03d/000000?text=+) `#ffc03d` - Tertiary color
-* ![#ff2525](https://placehold.it/15/ff2525/000000?text=+) `#ff2525` - Supplementary color #1
-* ![#e7eefb](https://placehold.it/15/e7eefb/000000?text=+) `#e7eefb` - Supplementary color #2
+* ![#b28262](https://placehold.it/15/b28262/000000?text=+) `#b28262` - Primary color
+* ![#dbd4d7](https://placehold.it/15/dbd4d7/000000?text=+) `#dbd4d7` - Secondary color
+* ![#0f161f](https://placehold.it/15/0f161f/000000?text=+) `#0f161f` - Tertiary color
+* ![#c6aaa0](https://placehold.it/15/c6aaa0/000000?text=+) `#c6aaa0` - Supplementary color #1
+* ![#88583d](https://placehold.it/15/88583d/000000?text=+) `#88583d` - Supplementary color #2
 
 The colors used throughout and what for etc....
 
@@ -212,6 +212,7 @@ Detail deployment here...
 ## Credits
 
 * Detail credits
+* Photo by Elly Fairytale from Pexels
 
 [Back to Top](#table-of-contents)
 
