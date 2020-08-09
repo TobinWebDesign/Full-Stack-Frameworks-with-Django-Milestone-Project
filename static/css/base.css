@@ -3,8 +3,6 @@ html {
 }
 
 body {
-    /* background: url('/media/Milestone project Hero Image.png') no-repeat center center fixed;
-    background-size: cover; */
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Roboto', sans-serif;
@@ -95,6 +93,9 @@ body {
     border: 1px solid #88583d !important;
 }
 
+.bg-brown {
+    background: #88583d;
+}
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -116,5 +117,11 @@ body {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+@media (max-width: 479px) {
+    .nav-link {
+        font-size: 10px !important;
     }
 }
