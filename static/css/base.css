@@ -52,6 +52,11 @@ body {
     min-width: 260px;
 }
 
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 .btn-black {
     background: #0f161f;
     color: white;
