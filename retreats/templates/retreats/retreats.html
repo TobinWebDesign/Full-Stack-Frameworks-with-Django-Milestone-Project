@@ -45,7 +45,9 @@
                                         <div class="col">
                                             <p class="lead mb-0 text-left font-weight-bold">${{ retreat.price }}</p>
                                             {% if retreat.rating %}
+                                            <div class="card-white-sm">
                                                 <small class="text-gold"><i class="fas fa-star mr-1"></i>{{ retreat.rating }} / 5</small>
+                                            </div>
                                             {% else %}
                                                 <small class="text-gold">No Rating</small>
                                             {% endif %}

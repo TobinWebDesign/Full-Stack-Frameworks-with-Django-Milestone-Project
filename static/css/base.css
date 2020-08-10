@@ -120,12 +120,21 @@ body {
     color:#b28262;
 }
 
-.text-gold {
-    padding: 4px;
+.card-white-sm {
+    padding: 4px, 2px;
     background-color: white;
     border-radius: 2px;
-    color: goldenrod;
     max-width: 75px;
+}
+
+.text-gold {
+    color: goldenrod !important;
+}
+
+.text-gold:hover,
+.text-gold:active,
+.text-gold:focus {
+    color:goldenrod !important;
 }
 .border-black {
     border: 1px solid#0f161f !important;
