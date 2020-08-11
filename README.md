@@ -193,6 +193,12 @@ Testing django allauth:
 * Login using verified username
 * Confirm that authentication is working properly when we get 404 page with the /success url.
 
+Testing toasts:
+* Go to the add to bag view
+* Change the message to use error instead of success.
+* Then add something else to the shopping bag.
+* Test confirmed as the toast is used the error template.
+
 #### Found Bugs and Fixes:
 
 During manual testing...
