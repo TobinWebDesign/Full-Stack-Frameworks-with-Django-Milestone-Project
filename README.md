@@ -27,19 +27,20 @@
 
 ***
 
-## Welcome to PHP Barbell!
+## Welcome to  Yoga4Life
 
 <p align="center">
-    <img src="" alt="PHP Logo">
+    <img src="" alt="Yoga4Life Logo">
 </p>
 
 ***
 
 ## What does it do and what does it need to fulfill?
-This Milestone project creation is the culmination of learning and study from all modules of the Full Stack Developer Course, culminating in the creation of this Full Stack Framework Django project. This Application will allow an admin to store and manipulate data records and also allow users to create, read, update, delete & purchase memberships for this newly create local barbell club called, <a href="">PHP Barbell</a>.
+This Milestone project creation is the culmination of learning and study from all modules of the Full Stack Developer Course, culminating in the creation of this Full Stack Framework Django project. This Application will allow an admin to store and manipulate data records and also allow users to create, read, update, delete & purchase memberships for this newly create local barbell club called, <a href="">Yoga4Life
+</a>.
 
 <p align="center">
-    <img src="" alt="PHP Favicon">
+    <img src="" alt="Yoga4Life Favicon">
 </p>
 
 ### Functionality of Project
@@ -100,7 +101,7 @@ The colors used throughout and what for etc....
 The logo was ...
 
 <p align="center">
-    <img src="" alt="PHP Logo">
+    <img src="" alt="Yoga4Life Logo">
 </p>
 
 ##### 4. Geometry
