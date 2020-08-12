@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',
     'retreats',
-    'cart'
+    'cart',
+    'checkout',
 ]
 
 MIDDLEWARE = [
