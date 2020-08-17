@@ -48,7 +48,11 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_cart = json.dumps(cart)
+            order.save()
             for item_id, item_data in cart.items():
                 try:
                     retreat = Retreat.objects.get(id=item_id)
@@ -68,6 +72,8 @@ def checkout(request):
                     return redirect(reverse('view_cart'))
 
             request.session['save_info'] = 'save-info' in request.POST
+
+            print(order_line_item)
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
@@ -89,6 +95,8 @@ def checkout(request):
         )
 
         order_form = OrderForm()
+
+        print(total)
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \

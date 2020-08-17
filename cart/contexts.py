@@ -32,5 +32,5 @@ def cart_contents(request):
         'retreat_count': retreat_count,
         'grand_total': grand_total,
     }
-
+    print(grand_total)
     return context

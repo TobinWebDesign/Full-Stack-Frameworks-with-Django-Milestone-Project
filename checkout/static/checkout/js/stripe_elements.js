@@ -100,7 +100,7 @@ form.addEventListener('submit', function(ev) {
                     <span class="icon" role="alert">
                         <i class="fas fa-times"></i>
                     </span>
-                    <span>${event.error.message}</span>`;
+                    <span>${result.error.message}</span>`;
                 $(errorDiv).html(html);
                 $('#payment-form').fadeToggle(100);
                 $('#loading-overlay').fadeToggle(100);
