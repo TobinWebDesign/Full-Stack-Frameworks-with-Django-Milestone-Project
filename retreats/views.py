@@ -50,7 +50,17 @@ def retreat_detail(request, retreat_id):
 
 def add_retreat(request):
     """ Add a retreat to the store """
-    form = RetreatForm()
+    if request.method == 'POST':
+        form = RetreatForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added retreat!')
+            return redirect(reverse('add_retreat'))
+        else:
+            messages.error(request, 'Failed to add retreat. Please ensure the form is valid.')
+    else:
+        form = RetreatForm()
+
     template = 'retreats/add_retreat.html'
     context = {
         'form': form,
