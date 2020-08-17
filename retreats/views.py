@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Retreat, Category
 
+from .models import Retreat, Category
+from .forms import RetreatForm
 # Create your views here.
 
 
@@ -46,3 +47,13 @@ def retreat_detail(request, retreat_id):
     }
     
     return render(request, 'retreats/retreat_detail.html', context)
+
+def add_retreat(request):
+    """ Add a retreat to the store """
+    form = RetreatForm()
+    template = 'retreats/add_retreat.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

@@ -1,0 +1,18 @@
+from django import forms
+from .models import Retreat, Category
+
+
+class RetreatForm(forms.ModelForm):
+
+    class Meta:
+        model = Retreat
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        categories = Category.objects.all()
+        friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
+
+        self.fields['category'].choices = friendly_names
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'border-brown rounded-0'
