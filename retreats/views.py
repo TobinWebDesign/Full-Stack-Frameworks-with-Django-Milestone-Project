@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-
+from django.contrib.auth.decorators import login_required
 from .models import Retreat, Category
 from .forms import RetreatForm
 # Create your views here.
@@ -37,6 +37,7 @@ def all_retreats(request):
     
     return render(request, 'retreats/retreats.html', context)
 
+
 def retreat_detail(request, retreat_id):
     """ A view to show idividual retreats """
 
@@ -48,8 +49,14 @@ def retreat_detail(request, retreat_id):
     
     return render(request, 'retreats/retreat_detail.html', context)
 
+
+@login_required
 def add_retreat(request):
     """ Add a retreat to the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = RetreatForm(request.POST, request.FILES)
         if form.is_valid():
@@ -68,8 +75,14 @@ def add_retreat(request):
 
     return render(request, template, context)
 
+
+@login_required
 def edit_retreat(request, retreat_id):
     """ Edit a retreat in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
     retreat = get_object_or_404(Retreat, pk=retreat_id)
     if request.method == 'POST':
         form = RetreatForm(request.POST, request.FILES, instance=retreat)
@@ -91,8 +104,14 @@ def edit_retreat(request, retreat_id):
 
     return render(request, template, context)
 
+
+@login_required
 def delete_retreat(request, retreat_id):
     """ Delete a retreat from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+        
     retreat = get_object_or_404(Retreat, pk=retreat_id)
     retreat.delete()
     messages.success(request, 'Retreat deleted!')
