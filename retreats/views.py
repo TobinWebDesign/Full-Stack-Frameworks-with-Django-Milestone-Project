@@ -53,9 +53,9 @@ def add_retreat(request):
     if request.method == 'POST':
         form = RetreatForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            retreat = form.save()
             messages.success(request, 'Yey! Successfully added retreat!')
-            return redirect(reverse('add_retreat'))
+            return redirect(reverse('retreat_detail', args=[retreat.id]))
         else:
             messages.error(request, 'Opps! Failed to add retreat. Please ensure the form is valid.')
     else:
@@ -90,3 +90,10 @@ def edit_retreat(request, retreat_id):
     }
 
     return render(request, template, context)
+
+def delete_retreat(request, retreat_id):
+    """ Delete a retreat from the store """
+    retreat = get_object_or_404(Retreat, pk=retreat_id)
+    retreat.delete()
+    messages.success(request, 'Retreat deleted!')
+    return redirect(reverse('retreats'))
