@@ -66,6 +66,7 @@ def checkout(request):
                             quantity=item_data,
                         )
                         order_line_item.save()
+                        print('line item created')
                 except Retreat.DoesNotExist:
                     messages.error(request, (
                         "One of the retreats in your cart wasn't found in our database. "
@@ -138,7 +139,7 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    
+    print(order)
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order

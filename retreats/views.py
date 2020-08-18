@@ -54,16 +54,39 @@ def add_retreat(request):
         form = RetreatForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully added retreat!')
+            messages.success(request, 'Yey! Successfully added retreat!')
             return redirect(reverse('add_retreat'))
         else:
-            messages.error(request, 'Failed to add retreat. Please ensure the form is valid.')
+            messages.error(request, 'Opps! Failed to add retreat. Please ensure the form is valid.')
     else:
         form = RetreatForm()
 
     template = 'retreats/add_retreat.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+def edit_retreat(request, retreat_id):
+    """ Edit a retreat in the store """
+    retreat = get_object_or_404(Retreat, pk=retreat_id)
+    if request.method == 'POST':
+        form = RetreatForm(request.POST, request.FILES, instance=retreat)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Yey! Successfully updated retreat!')
+            return redirect(reverse('retreat_detail', args=[retreat.id]))
+        else:
+            messages.error(request, 'Opps! Failed to update retreat. Please ensure the form is valid.')
+    else:
+        form = RetreatForm(instance=retreat)
+        messages.info(request, f'You are editing {retreat.name}')
+
+    template = 'retreats/edit_retreat.html'
+    context = {
+        'form': form,
+        'retreat': retreat,
     }
 
     return render(request, template, context)
