@@ -2,5 +2,24 @@ from django.contrib import admin
 from .models import Class, Level
 
 # Register your models here.
-admin.site.register(Class)
-admin.site.register(Level)
+
+class ClassAdmin(admin.ModelAdmin):
+    list_display = (
+        'sku',
+        'name',
+        'dificulty',
+        'price',
+        'level',
+        'image',
+    )
+
+    ordering = ('sku',)
+
+class LevelAdmin(admin.ModelAdmin):
+    list_display = (
+        'friendly_name',
+        'name',
+    )
+
+admin.site.register(Class, ClassAdmin)
+admin.site.register(Level, LevelAdmin)
