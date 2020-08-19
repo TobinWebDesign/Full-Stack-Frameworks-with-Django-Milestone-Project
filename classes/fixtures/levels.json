@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "classes.level", "fields": {"name": "Beginner", "friendly_name": "beginner"}}, {"pk": 2, "model": "classes.level", "fields": {"name": "intermediate", "friendly_name": "Intermediate"}}, {"pk": 3, "model": "classes.level", "fields": {"name": "advanced", "friendly_name": "Advanced"}}]

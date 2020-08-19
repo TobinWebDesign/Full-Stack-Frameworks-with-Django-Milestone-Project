@@ -25,7 +25,13 @@
             <div class="col-12 col-md-6">
                 <form method="POST" action="{% url 'edit_retreat' retreat.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ form | crispy }}
+                    {% for field in form %}
+                        {% if field.name != 'image' %}
+                            {{ field | as_crispy_field }}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    {% endfor %}
                     <div class="text-right">
                         <a class="btn btn-outline-brown rounded-1" href="{% url 'retreats' %}">Cancel</a>
                         <button class="btn btn-brown rounded-1" type="submit">Update retreat</button>
