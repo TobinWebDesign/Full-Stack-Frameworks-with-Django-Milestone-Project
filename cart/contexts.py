@@ -2,6 +2,7 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from retreats.models import Retreat
+from classes.models import Class
 
 def cart_contents(request):
 
@@ -16,12 +17,13 @@ def cart_contents(request):
 
     for item_id, quantity in cart.items():
         retreat = get_object_or_404(Retreat, pk=item_id)
+        class_detail = get_object_or_404(Class, sku=item_id)
         total += quantity * retreat.price
         retreat_count += quantity
         cart_items.append({
             'item_id': item_id,
             'quantity': quantity,
-            'retreat': retreat,
+            'class': class_detail,
         })
     
     grand_total = total
