@@ -11,6 +11,7 @@ class ClassAdmin(admin.ModelAdmin):
         'price',
         'level',
         'image',
+        'day',
     )
 
     ordering = ('sku',)
@@ -20,6 +21,7 @@ class LevelAdmin(admin.ModelAdmin):
         'friendly_name',
         'name',
     )
+
 
 admin.site.register(Class, ClassAdmin)
 admin.site.register(Level, LevelAdmin)
