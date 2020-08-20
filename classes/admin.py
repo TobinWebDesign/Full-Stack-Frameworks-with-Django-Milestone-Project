@@ -14,7 +14,7 @@ class ClassAdmin(admin.ModelAdmin):
         'day',
     )
 
-    ordering = ('sku',)
+    ordering = ('day',)
 
 class LevelAdmin(admin.ModelAdmin):
     list_display = (
