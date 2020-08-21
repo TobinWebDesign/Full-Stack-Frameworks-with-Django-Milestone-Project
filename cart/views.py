@@ -14,7 +14,7 @@ def view_cart(request):
 def add_to_cart(request, item_id):
     """ Add a quantity of the specified retreat to the shopping cart """
 
-    retreat = get_object_or_404(Retreat, pk=item_id)
+    retreat = get_object_or_404(Retreat, sku=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
@@ -50,7 +50,7 @@ def add_class_to_cart(request, item_id):
 def adjust_cart(request, item_id):
     """ Adjust a quantity of the specified retreat to the shopping cart """
 
-    retreat = get_object_or_404(Retreat, pk=item_id)
+    retreat = get_object_or_404(Retreat, sku=item_id)
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
 
@@ -68,7 +68,7 @@ def adjust_cart(request, item_id):
 
 def remove_from_cart(request, item_id):
     """ Remove a specified retreat to the shopping cart """
-    retreat = get_object_or_404(Retreat, pk=item_id)
+    retreat = get_object_or_404(Retreat, sku=item_id)
     cart = request.session.get('cart', {})
     
     cart.pop(item_id)

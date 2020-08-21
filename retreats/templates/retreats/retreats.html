@@ -25,13 +25,13 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 {% if retreat.image %}
-                                <a href="">
+                                <a href="{% url 'retreat_detail' retreat.sku %}">
                                     <div class="image">
                                         <img class="card-img-top" src="{{ retreat.image.url }}" alt="{{ retreat.name }}">
                                     </div>
                                 </a>
                                 {% else %}
-                                <a href="">
+                                <a href="{% url 'retreat_detail' retreat.sku %}">
                                     <div class="image">
                                         <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ retreat.name }}">
                                     </div>
