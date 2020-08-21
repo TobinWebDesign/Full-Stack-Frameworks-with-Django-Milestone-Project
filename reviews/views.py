@@ -1,7 +1,8 @@
-from django.shortcuts import get_object_or_404, render
-
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
 from .models import Review
 from .forms import ReviewForm
+import datetime
 
 def all_reviews(request):
 
@@ -28,7 +29,20 @@ def review_detail(request, review_id):
 
 def add_review(request):
     """ Add a review to the store """
-    form = ReviewForm()
+    
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = Review()
+            review.pub_date = datetime.datetime.now()
+            review = form.save()
+            messages.success(request, 'Yey! Successfully added review!')
+            return redirect(reverse('reviews'))
+        else:
+            messages.error(request, 'Opps! Failed to add review. Please ensure the form is valid.')
+    else:
+        form = ReviewForm()
+
     template = 'reviews/add_review.html'
     context = {
         'form': form,
