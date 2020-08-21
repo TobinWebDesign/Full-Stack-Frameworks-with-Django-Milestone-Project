@@ -12,21 +12,24 @@ def cart_contents(request):
 
     cart_items = []
     total = 0
+    class_total = 0
     retreat_count = 0
     cart = request.session.get('cart', {})
 
     for item_id, quantity in cart.items():
-        retreat = get_object_or_404(Retreat, pk=item_id)
+        retreat = get_object_or_404(Retreat, sku=item_id)
         class_detail = get_object_or_404(Class, sku=item_id)
         total += quantity * retreat.price
+        class_total += quantity * class_detail.price
         retreat_count += quantity
         cart_items.append({
             'item_id': item_id,
             'quantity': quantity,
+            'retreat': retreat,
             'class': class_detail,
         })
     
-    grand_total = total
+    grand_total = total + class_total
 
     context = {
         'cart_items': cart_items,
