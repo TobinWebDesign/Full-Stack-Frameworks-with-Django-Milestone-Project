@@ -13,8 +13,18 @@ def all_reviews(request):
         'reviews': reviews
         }
 
-    
     return render(request, 'reviews/reviews.html', context)
+
+def review_detail(request, review_id):
+    """ A view to show idividual reviews """
+
+    review = get_object_or_404(Review, pk=review_id)
+
+    context = {
+        'review': review,
+    }
+    
+    return render(request, 'reviews/review_detail.html', context)
 
 def add_review(request):
     """ Add a review to the store """
