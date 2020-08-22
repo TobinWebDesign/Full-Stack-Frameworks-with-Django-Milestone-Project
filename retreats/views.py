@@ -40,7 +40,6 @@ def all_retreats(request):
 
 def retreat_detail(request, retreat_id):
     """ A view to show idividual retreats """
-
     retreat = get_object_or_404(Retreat, sku=retreat_id)
 
     context = {
