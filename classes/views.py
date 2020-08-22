@@ -1,5 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
 from .models import Class
+from django.contrib.auth.decorators import login_required
 from .forms import ClassForm
 
 # Create your views here.
@@ -28,8 +30,20 @@ def class_detail(request, class_id):
 
 def add_class(request):
     """ Add a yoga class to the store """
-    
-    form = ClassForm()
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = ClassForm(request.POST, request.FILES)
+        if form.is_valid():
+            add_class = form.save()
+            messages.success(request, 'Yey! Successfully added class!')
+            return redirect(reverse('classes'))
+        else:
+            messages.error(request, 'Opps! Failed to add class. Please ensure the form is valid.')
+    else:
+        form = ClassForm()
 
     template = 'classes/add_class.html'
     context = {
