@@ -6,7 +6,7 @@ from .models import Class
 def all_classes(request):
     """ A view to show all classes """
 
-    classes = Class.objects.all()
+    classes = Class.objects.order_by('day')
 
     context = {
         'classes': classes,
