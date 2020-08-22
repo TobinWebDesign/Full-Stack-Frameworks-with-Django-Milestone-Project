@@ -12,6 +12,7 @@ class ClassAdmin(admin.ModelAdmin):
         'level',
         'image',
         'day',
+        'time'
     )
 
     ordering = ('day',)

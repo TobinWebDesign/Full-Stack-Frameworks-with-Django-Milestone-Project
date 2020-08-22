@@ -17,22 +17,54 @@
             <hr class="w-50 mb-1">
         </div>
     </div>
-    <div class="row">
+     <div class="row">
         <div class="retreat-container col-10 offset-1">
             <div class="row mt-1 mb-2"></div>
             <div class="row">
-                {% for class in classes %}
-                <!-- Monday timetable col                    -->
-                                          
-                    {% if class.day == "1"%}
-                    <div class="col-sm-6 col-md-6 col-lg-2 col-xl-2 pb-5">      
-                        <h6 class="logo-font">Monday</h6>
+             <!-- Monday timetable col                    -->   
+                <div class="col-sm-6 col-md-6 col-lg-2 col-xl-2">                                          
+                    <h6 class="logo-font">Monday</h6>
+                {% for class in classes %}               
+                    <div class="col pb-5">    
+                    {% if class.day == "1"%}                          
                         <div class="card h-100 border-0">
                             <div class="card-body pb-0">
                                 <p class="mb-0">{{ class.name }}</p>
                             </div>
                             <div class="card-footer pt-0 border-0 text-left">
-                                <div class="row">
+                                <div class="">
+                                    <div class="col">
+                                        <p class="lead mb-0 font-weight-bold">${{ class.price }}</p>
+                                        {% if class.dificulty %}
+                                        <div class="card-white-sm">
+                                            <small class="text-gold"><i class="fas fa-running mr-1"></i>{{ class.dificulty }} / 5</small>
+                                        </div>
+                                        {% else %}
+                                            <small class="text-gold">No dificulty</small>
+                                        {% endif %}  
+                                        <p class="mb-0">{{ class.level }}</p> 
+                                        <a class="btn btn-white" href="{% url 'class_detail' class.sku %}">Book Now</a>          
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}   
+                    </div>                                      
+                {% endfor %}
+                </div>
+            <!-- End Monday timetable col                    -->   
+            <!-- Tuesday timetable col                    -->   
+                <div class="col-sm-6 col-md-6 col-lg-2 col-xl-2">                                          
+                    <h6 class="logo-font">Tuesday</h6>
+                {% for class in classes %}   
+                {% if class.day == "2"%}             
+                    <div class="col pb-5">                                              
+                        <div class="card h-100 border-0">
+                            <div class="card-body pb-0">
+                                <p class="mb-0">{{ class.name }}</p>
+                            </div>
+                            <div class="card-footer pt-0 border-0 text-left">
+                                <div class="">
                                     <div class="col">
                                         <p class="lead mb-0 font-weight-bold">${{ class.price }}</p>
                                         {% if class.dificulty %}
@@ -49,154 +81,139 @@
                             </div>
                         </div>
                     </div>
-                    {% endif %}    
-                    <!-- End Tuesday timetale col                                        -->
-                                          
-                    {% if class.day == "2"%}
-                    <div class="col-sm-6 col-md-6 col-lg-2 col-xl-2 pb-5">      
-                        <h6 class="logo-font">Tuesday</h6>
-                        <div class="card h-100 border-0">
-                            <div class="card-body pb-0">
-                                <p class="mb-0">{{ class.name }}</p>
-                            </div>
-                            <div class="card-footer pt-0 border-0 text-left">
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="lead mb-0 font-weight-bold">${{ class.price }}</p>
-                                        {% if class.dificulty %}
-                                        <div class="card-white-sm">
-                                            <small class="text-gold"><i class="fas fa-running mr-1"></i>{{ class.dificulty }} / 5</small>
-                                        </div>
-                                        {% else %}
-                                            <small class="text-gold">No dificulty</small>
-                                        {% endif %}  
-                                        <p class="mb-0">{{ class.level }}</p>    
-                                        <a class="btn btn-white" href="{% url 'class_detail' class.sku %}">Book Now</a>        
-                                    </div>                                                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}    
-                    <!-- End Wednesday timetale col                                        -->
-
-                                          
-                    {% if class.day == "3"%}
-                    <div class="col-sm-6 col-md-6 col-lg-2 col-xl-2 pb-5">      
-                        <h6 class="logo-font">Wednesday</h6>
-                        <div class="card h-100 border-0">
-                            <div class="card-body pb-0">
-                                <p class="mb-0">{{ class.name }}</p>
-                            </div>
-                            <div class="card-footer pt-0 border-0 text-left">
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="lead mb-0 font-weight-bold">${{ class.price }}</p>
-                                        {% if class.dificulty %}
-                                        <div class="card-white-sm">
-                                            <small class="text-gold"><i class="fas fa-running mr-1"></i>{{ class.dificulty }} / 5</small>
-                                        </div>
-                                        {% else %}
-                                            <small class="text-gold">No dificulty</small>
-                                        {% endif %}  
-                                        <p class="mb-0">{{ class.level }}</p>    
-                                        <a class="btn btn-white" href="{% url 'class_detail' class.sku %}">Book Now</a>       
-                                    </div>                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}    
-                    <!-- End Wednesday timetale col                                        -->
-                    <!--Thursday timetale col                                        -->
-                                          
-                    {% if class.day == "4"%}
-                    <div class="col-sm-6 col-md-6 col-lg-2 col-xl-2 pb-5">      
-                        <h6 class="logo-font">Thursday</h6>
-                        <div class="card h-100 border-0">
-                            <div class="card-body pb-0">
-                                <p class="mb-0">{{ class.name }}</p>
-                            </div>
-                            <div class="card-footer pt-0 border-0 text-left">
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="lead mb-0 font-weight-bold">${{ class.price }}</p>
-                                        {% if class.dificulty %}
-                                        <div class="card-white-sm">
-                                            <small class="text-gold"><i class="fas fa-running mr-1"></i>{{ class.dificulty }} / 5</small>
-                                        </div>
-                                        {% else %}
-                                            <small class="text-gold">No dificulty</small>
-                                        {% endif %}  
-                                        <p class="mb-0">{{ class.level }}</p>      
-                                        <a class="btn btn-white" href="{% url 'class_detail' class.sku %}">Book Now</a>     
-                                    </div>                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}    
-                    <!-- End Thursday timetale col                                        -->
-
-                    <!--Friday timetale col                                        -->
-                                          
-                    {% if class.day == "5"%}
-                    <div class="col-sm-6 col-md-6 col-lg-2 col-xl-2 pb-5">      
-                        <h6 class="logo-font">Friday</h6>
-                        <div class="card h-100 border-0">
-                            <div class="card-body pb-0">
-                                <p class="mb-0">{{ class.name }}</p>
-                            </div>
-                            <div class="card-footer pt-0 border-0 text-left">
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="lead mb-0 font-weight-bold">${{ class.price }}</p>
-                                        {% if class.dificulty %}
-                                        <div class="card-white-sm">
-                                            <small class="text-gold"><i class="fas fa-running mr-1"></i>{{ class.dificulty }} / 5</small>
-                                        </div>
-                                        {% else %}
-                                            <small class="text-gold">No dificulty</small>
-                                        {% endif %}  
-                                        <p class="mb-0">{{ class.level }}</p>        
-                                        <a class="btn btn-white" href="{% url 'class_detail' class.sku %}">Book Now</a>   
-                                    </div>                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}    
-                    <!-- End Friday timetale col                                        -->
-                     <!-- Saturday timetale col                                        -->
-                                          
-                    {% if class.day == "6"%}
-                    <div class="col-sm-6 col-md-6 col-lg-2 col-xl-2 pb-5">      
-                        <h6 class="logo-font">Saturday</h6>
-                        <div class="card h-100 border-0">
-                            <div class="card-body pb-0">
-                                <p class="mb-0">{{ class.name }}</p>
-                            </div>
-                            <div class="card-footer pt-0 border-0 text-left">
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="lead mb-0 font-weight-bold">${{ class.price }}</p>
-                                        {% if class.dificulty %}
-                                        <div class="card-white-sm">
-                                            <small class="text-gold"><i class="fas fa-running mr-1"></i>{{ class.dificulty }} / 5</small>
-                                        </div>
-                                        {% else %}
-                                            <small class="text-gold">No dificulty</small>
-                                        {% endif %}  
-                                        <p class="mb-0">{{ class.level }}</p>          
-                                        <a class="btn btn-white" href="{% url 'class_detail' class.id %}">Book Now</a> 
-                                    </div>                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}    
-                    <!-- End Saturday timetale col                                        -->
+                {% endif %}                                                             
                 {% endfor %}
+                </div>
+            <!-- End Tuesday timetable col                    -->   
+            <!-- Wednesday timetable col                    -->   
+                <div class="col-sm-6 col-md-6 col-lg-2 col-xl-2">                                          
+                    <h6 class="logo-font">Wednesday</h6>
+                {% for class in classes %}   
+                {% if class.day == "3"%}             
+                    <div class="col pb-5">                                              
+                        <div class="card h-100 border-0">
+                            <div class="card-body pb-0">
+                                <p class="mb-0">{{ class.name }}</p>
+                            </div>
+                            <div class="card-footer pt-0 border-0 text-left">
+                                <div class="">
+                                    <div class="col">
+                                        <p class="lead mb-0 font-weight-bold">${{ class.price }}</p>
+                                        {% if class.dificulty %}
+                                        <div class="card-white-sm">
+                                            <small class="text-gold"><i class="fas fa-running mr-1"></i>{{ class.dificulty }} / 5</small>
+                                        </div>
+                                        {% else %}
+                                            <small class="text-gold">No dificulty</small>
+                                        {% endif %}  
+                                        <p class="mb-0">{{ class.level }}</p> 
+                                        <a class="btn btn-white" href="{% url 'class_detail' class.sku %}">Book Now</a>          
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}                                                             
+                {% endfor %}
+                </div>
+            <!-- End Wednesday timetable col                    -->  
+            <!-- Thursday timetable col                    -->   
+                <div class="col-sm-6 col-md-6 col-lg-2 col-xl-2">                                          
+                    <h6 class="logo-font">Thursday</h6>
+                {% for class in classes %}   
+                {% if class.day == "4"%}             
+                    <div class="col pb-5">                                              
+                        <div class="card h-100 border-0">
+                            <div class="card-body pb-0">
+                                <p class="mb-0">{{ class.name }}</p>
+                            </div>
+                            <div class="card-footer pt-0 border-0 text-left">
+                                <div class="">
+                                    <div class="col">
+                                        <p class="lead mb-0 font-weight-bold">${{ class.price }}</p>
+                                        {% if class.dificulty %}
+                                        <div class="card-white-sm">
+                                            <small class="text-gold"><i class="fas fa-running mr-1"></i>{{ class.dificulty }} / 5</small>
+                                        </div>
+                                        {% else %}
+                                            <small class="text-gold">No dificulty</small>
+                                        {% endif %}  
+                                        <p class="mb-0">{{ class.level }}</p> 
+                                        <a class="btn btn-white" href="{% url 'class_detail' class.sku %}">Book Now</a>          
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}                                                             
+                {% endfor %}
+                </div>
+            <!-- End Thursday timetable col                    -->  
+            <!-- Friday timetable col                    -->   
+                <div class="col-sm-6 col-md-6 col-lg-2 col-xl-2">                                          
+                    <h6 class="logo-font">Friday</h6>
+                {% for class in classes %}   
+                {% if class.day == "5"%}             
+                    <div class="col pb-5">                                              
+                        <div class="card h-100 border-0">
+                            <div class="card-body pb-0">
+                                <p class="mb-0">{{ class.name }}</p>
+                            </div>
+                            <div class="card-footer pt-0 border-0 text-left">
+                                <div class="">
+                                    <div class="col">
+                                        <p class="lead mb-0 font-weight-bold">${{ class.price }}</p>
+                                        {% if class.dificulty %}
+                                        <div class="card-white-sm">
+                                            <small class="text-gold"><i class="fas fa-running mr-1"></i>{{ class.dificulty }} / 5</small>
+                                        </div>
+                                        {% else %}
+                                            <small class="text-gold">No dificulty</small>
+                                        {% endif %}  
+                                        <p class="mb-0">{{ class.level }}</p> 
+                                        <a class="btn btn-white" href="{% url 'class_detail' class.sku %}">Book Now</a>          
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}                                                             
+                {% endfor %}
+                </div>
+            <!-- End Friday timetable col                    -->  
+            <!-- Saturday timetable col                    -->   
+                <div class="col-sm-6 col-md-6 col-lg-2 col-xl-2">                                          
+                    <h6 class="logo-font">Saturday</h6>
+                {% for class in classes %}   
+                {% if class.day == "6"%}             
+                    <div class="col pb-5">                                              
+                        <div class="card h-100 border-0">
+                            <div class="card-body pb-0">
+                                <p class="mb-0">{{ class.name }}</p>
+                            </div>
+                            <div class="card-footer pt-0 border-0 text-left">
+                                <div class="">
+                                    <div class="col">
+                                        <p class="lead mb-0 font-weight-bold">${{ class.price }}</p>
+                                        {% if class.dificulty %}
+                                        <div class="card-white-sm">
+                                            <small class="text-gold"><i class="fas fa-running mr-1"></i>{{ class.dificulty }} / 5</small>
+                                        </div>
+                                        {% else %}
+                                            <small class="text-gold">No dificulty</small>
+                                        {% endif %}  
+                                        <p class="mb-0">{{ class.level }}</p> 
+                                        <a class="btn btn-white" href="{% url 'class_detail' class.sku %}">Book Now</a>          
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}                                                             
+                {% endfor %}
+                </div>
+            <!-- End Saturday timetable col                    -->  
+             
             </div>
         </div> 
     </div>
