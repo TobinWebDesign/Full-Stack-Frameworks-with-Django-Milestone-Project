@@ -7,6 +7,7 @@ from django.conf import settings
 from django_countries.fields import CountryField
 
 from retreats.models import Retreat
+from classes.models import Class
 from profiles.models import UserProfile
 
 
@@ -58,7 +59,8 @@ class Order(models.Model):
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
-    retreat = models.ForeignKey(Retreat, null=False, blank=False, on_delete=models.CASCADE)
+    retreat = models.ForeignKey(Retreat, null=True, blank=False, on_delete=models.CASCADE)
+    class_detail = models.ForeignKey(Class, null=True, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 
@@ -67,8 +69,14 @@ class OrderLineItem(models.Model):
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        self.lineitem_total = self.retreat.price * self.quantity
+        if(self.class_detail):
+            self.lineitem_total = self.class_detail.price * self.quantity
+        else:
+            self.lineitem_total = self.retreat.price * self.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'SKU {self.retreat.sku} on order {self.order.order_number}'
+        if(self.class_detail):
+            return f'SKU {self.class_detail.sku} on order {self.order.order_number}'
+        else:
+            return f'SKU {self.retreat.sku} on order {self.order.order_number}'

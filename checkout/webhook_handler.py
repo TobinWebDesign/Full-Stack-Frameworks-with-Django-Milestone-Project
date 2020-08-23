@@ -5,6 +5,7 @@ from django.conf import settings
 
 from .models import Order, OrderLineItem
 from retreats.models import Retreat
+from classes.models import Class
 from profiles.models import UserProfile
 
 import json
@@ -120,22 +121,44 @@ class StripeWH_Handler:
                     stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(cart).items():
-                    retreat = Retreat.objects.get(id=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
-                            order=order,
-                            retreat=retreat,
-                            quantity=item_data,
-                        )
-                        order_line_item.save()
-                    else:
-                        for size, quantity in item_data['items_by_size'].items():
+                    item_type_and_id = item_id.split('_')
+                    product_type=item_type_and_id[0]
+                    product_id=item_type_and_id[1]
+                    if(product_type=='retreat'):
+                        retreat = Retreat.objects.get(id=product_id)
+                        if isinstance(item_data, int):
                             order_line_item = OrderLineItem(
                                 order=order,
                                 retreat=retreat,
-                                quantity=quantity,
+                                quantity=item_data,
                             )
                             order_line_item.save()
+                        else:
+                            for size, quantity in item_data['items_by_size'].items():
+                                order_line_item = OrderLineItem(
+                                    order=order,
+                                    retreat=retreat,
+                                    quantity=quantity,
+                                )
+                                order_line_item.save()
+                    else: # Class
+                        retreat = Class.objects.get(id=product_id)
+                        if isinstance(item_data, int):
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                class_detail=retreat,
+                                quantity=item_data,
+                            )
+                            order_line_item.save()
+                        else:
+                            for size, quantity in item_data['items_by_size'].items():
+                                order_line_item = OrderLineItem(
+                                    order=order,
+                                    class_detail=retreat,
+                                    quantity=quantity,
+                                )
+                                order_line_item.save()
+
             except Exception as e:
                 if order:
                     order.delete()

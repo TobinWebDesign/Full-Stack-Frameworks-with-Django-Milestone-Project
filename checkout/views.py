@@ -7,6 +7,7 @@ from .forms import OrderForm
 from .models import Order, OrderLineItem
 
 from retreats.models import Retreat
+from classes.models import Class
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from cart.contexts import cart_contents
@@ -56,24 +57,54 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_cart = json.dumps(cart)
             order.save()
-            for item_id, item_data in cart.items():
-                try:
-                    retreat = Retreat.objects.get(pk=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
-                            order=order,
-                            retreat=retreat,
-                            quantity=item_data,
+                    
+            for item_id, quantity in cart.items():
+                item_type_and_id = item_id.split('_')
+                product_type=item_type_and_id[0]
+                product_id=item_type_and_id[1]
+                if(product_type=='retreat'):
+                    try:
+                        product = Retreat.objects.get(pk=product_id)
+                        if isinstance(quantity, int):
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                retreat=product,
+                                quantity=quantity,
+                            )
+                            order_line_item.save()
+
+                            print('line item created')
+                    except Retreat.DoesNotExist:
+                        #product = get_object_or_404(Class, pk=item_id)
+                        print("Product does not exist")
+                        messages.error(request, (
+                            "One of the retreats in your cart wasn't found in our database. "
+                            "Please call us for assistance!")
                         )
-                        order_line_item.save()
-                        print('line item created')
-                except Retreat.DoesNotExist:
-                    messages.error(request, (
-                        "One of the retreats in your cart wasn't found in our database. "
-                        "Please call us for assistance!")
-                    )
-                    order.delete()
-                    return redirect(reverse('view_cart'))
+                        order.delete()
+                        return redirect(reverse('view_cart'))
+                else:# Type is Class here
+                    try:
+                        product = Class.objects.get(pk=product_id)
+                        if isinstance(quantity, int):
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                class_detail=product,
+                                quantity=quantity,
+                            )
+                            order_line_item.save()
+
+                            print('line item created')
+                    except Class.DoesNotExist:
+                        #product = get_object_or_404(Class, pk=item_id)
+                        print("Class does not exist")
+                        messages.error(request, (
+                            "One of the retreats in your cart wasn't found in our database. "
+                            "Please call us for assistance!")
+                        )
+                        order.delete()
+                        return redirect(reverse('view_cart'))
+               
 
             request.session['save_info'] = 'save-info' in request.POST
 
