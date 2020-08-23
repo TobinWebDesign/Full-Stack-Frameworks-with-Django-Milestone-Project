@@ -25,13 +25,13 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 {% if retreat.image %}
-                                <a href="{% url 'retreat_detail' retreat.sku %}">
+                                <a href="{% url 'retreat_detail' retreat.id %}">
                                     <div class="image">
                                         <img class="card-img-top" src="{{ retreat.image.url }}" alt="{{ retreat.name }}">
                                     </div>
                                 </a>
                                 {% else %}
-                                <a href="{% url 'retreat_detail' retreat.sku %}">
+                                <a href="{% url 'retreat_detail' retreat.id %}">
                                     <div class="image">
                                         <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ retreat.name }}">
                                     </div>
@@ -53,8 +53,8 @@
                                             {% endif %}
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3">
-                                                    <a href="{% url 'edit_retreat' retreat.sku %}">Edit</a> | 
-                                                    <a class="text-danger" href="{% url 'delete_retreat' retreat.sku %}">Delete</a>
+                                                    <a href="{% url 'edit_retreat' retreat.id %}">Edit</a> | 
+                                                    <a class="text-danger" href="{% url 'delete_retreat' retreat.id %}">Delete</a>
                                                 </small>
                                             {% endif %}
                                         </div>

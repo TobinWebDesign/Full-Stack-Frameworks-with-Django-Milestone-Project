@@ -17,17 +17,17 @@ def cart_contents(request):
 
     for item_id, quantity in cart.items():
         try:
-            product = Retreat.objects.get(sku=item_id)
+            product = Retreat.objects.get(pk=item_id)
         except Retreat.DoesNotExist:
-            product = get_object_or_404(Class, sku=item_id)
+            product = get_object_or_404(Class, pk=item_id)
         total += quantity * product.price
         product_count += quantity
-        cart_items.append({            
+        cart_items.append({
             'item_id': item_id,
             'quantity': quantity,
             'retreat': product,
         })
-    
+
     grand_total = total
 
     context = {

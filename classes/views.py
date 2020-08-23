@@ -20,7 +20,7 @@ def all_classes(request):
 def class_detail(request, class_id):
     """ A view to show idividual classs """
 
-    class_detail = get_object_or_404(Class, sku=class_id)
+    class_detail = get_object_or_404(Class, pk=class_id)
 
     context = {
         'class': class_detail,

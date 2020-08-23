@@ -40,7 +40,7 @@ def all_retreats(request):
 
 def retreat_detail(request, retreat_id):
     """ A view to show idividual retreats """
-    retreat = get_object_or_404(Retreat, sku=retreat_id)
+    retreat = get_object_or_404(Retreat, pk=retreat_id)
 
     context = {
         'retreat': retreat,
@@ -61,7 +61,7 @@ def add_retreat(request):
         if form.is_valid():
             retreat = form.save()
             messages.success(request, 'Yey! Successfully added retreat!')
-            return redirect(reverse('retreat_detail', args=[retreat.sku]))
+            return redirect(reverse('retreat_detail', args=[retreat.id]))
         else:
             messages.error(request, 'Opps! Failed to add retreat. Please ensure the form is valid.')
     else:
@@ -82,13 +82,13 @@ def edit_retreat(request, retreat_id):
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
-    retreat = get_object_or_404(Retreat, sku=retreat_id)
+    retreat = get_object_or_404(Retreat, pk=retreat_id)
     if request.method == 'POST':
         form = RetreatForm(request.POST, request.FILES, instance=retreat)
         if form.is_valid():
             form.save()
             messages.success(request, 'Yey! Successfully updated retreat!')
-            return redirect(reverse('retreat_detail', args=[retreat.sku]))
+            return redirect(reverse('retreat_detail', args=[retreat.id]))
         else:
             messages.error(request, 'Opps! Failed to update retreat. Please ensure the form is valid.')
     else:
@@ -111,7 +111,7 @@ def delete_retreat(request, retreat_id):
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
         
-    retreat = get_object_or_404(Retreat, sku=retreat_id)
+    retreat = get_object_or_404(Retreat, pk=retreat_id)
     retreat.delete()
     messages.success(request, 'Retreat deleted!')
     return redirect(reverse('retreats'))

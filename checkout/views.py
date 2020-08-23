@@ -58,7 +58,7 @@ def checkout(request):
             order.save()
             for item_id, item_data in cart.items():
                 try:
-                    retreat = Retreat.objects.get(id=item_id)
+                    retreat = Retreat.objects.get(pk=item_id)
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
