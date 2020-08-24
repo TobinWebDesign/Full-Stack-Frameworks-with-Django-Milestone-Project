@@ -36,7 +36,7 @@ def cart_contents(request):
             'item_id': item_id,
             'quantity': quantity,
             'product': product,
-            'item': item,
+            'item': item, # item can be either a retreat+id or a class+id
         })
         print(item_type_and_id)
         print(item_id)

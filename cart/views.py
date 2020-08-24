@@ -41,46 +41,30 @@ def add_to_cart(request, item_id, type):
 
 def adjust_cart(request, item):
     """ Adjust a quantity of the specified retreat and class to the shopping cart """
-    print(item_id)
-    # create a model to include both Class and Retreat
-    product_models = {
-        "class": Class,
-        "retreat": Retreat,
-    }
-
-    model = product_models.get(type)
-    product = get_object_or_404(model, pk=item_id)
-    # splitting the _ from the product tpye and id
-    product_type_id = type+'_'+str(item_id)
-    print(product_type_id)
+    
+    # item is either Class+pk or Retreat+id
+    #product = item
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
 
     if quantity > 0:
-        cart[product_type_id] = quantity
-        messages.success(request, f'Updated {product.name} quantity to {cart[product_type_id]}'),
+        cart[item] = quantity
+        messages.success(request, f'Your cart has been Updated')
     else:
-        del cart[product_type_id]
-        messages.success(request, f'Removed {product.name} to your cart'),
+        cart.pop(item)
+        messages.success(request, f'Item has been removed Removed')
 
     request.session['cart'] = cart
-    
+   
     return redirect(reverse('view_cart'))
 
 
-def remove_from_cart(request, item_id):
-    """ Remove a specified retreat to the shopping cart """
-    product_models = {
-        "class": Class,
-        "retreat": Retreat,
-    }
-
-    model = product_models.get(type)
-    product = get_object_or_404(model, pk=item_id)
+def remove_from_cart(request, item):
+    """ Remove a specified retreat to the shopping cart """     
     cart = request.session.get('cart', {})
     
-    cart.pop(item_id)
-    messages.success(request, f'Removed {product.name} from your cart')
+    cart.pop(item)
+    messages.success(request, f'Item has been removed Removed')
     request.session['cart'] = cart
    
     return HttpResponse(status=200)
