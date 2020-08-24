@@ -12,10 +12,8 @@ def view_cart(request):
     return render(request, 'cart/cart.html')
 
 def add_to_cart(request, item_id, type):
-    """ Add a quantity of the specified retreat to the shopping cart """
-    print(item_id)
-    print(type)
-
+    """ Add a quantity of the specified retreats to the shopping cart """
+    # create a model to include both Class and Retreat
     product_models = {
         "class": Class,
         "retreat": Retreat,
@@ -23,12 +21,13 @@ def add_to_cart(request, item_id, type):
 
     model = product_models.get(type)
     product = get_object_or_404(model, pk=item_id)
-    
+    # to split the Class and Retreat types
     product_type_id = type+'_'+str(item_id)
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
+    
     if product_type_id in list(cart.keys()):
         cart[product_type_id] += quantity
         messages.success(request, f'Updated {product.name} quantity to {cart[product_type_id]}'),
@@ -40,32 +39,48 @@ def add_to_cart(request, item_id, type):
     return redirect(redirect_url)
 
 
-def adjust_cart(request, item_id):
-    """ Adjust a quantity of the specified retreat to the shopping cart """
+def adjust_cart(request, item):
+    """ Adjust a quantity of the specified retreat and class to the shopping cart """
+    print(item_id)
+    # create a model to include both Class and Retreat
+    product_models = {
+        "class": Class,
+        "retreat": Retreat,
+    }
 
-    retreat = get_object_or_404(Retreat, pk=item_id)
+    model = product_models.get(type)
+    product = get_object_or_404(model, pk=item_id)
+    # splitting the _ from the product tpye and id
+    product_type_id = type+'_'+str(item_id)
+    print(product_type_id)
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
 
     if quantity > 0:
-        cart[item_id] = quantity
-        messages.success(request, f'Updated {retreat.name} quantity to {cart[item_id]}')
+        cart[product_type_id] = quantity
+        messages.success(request, f'Updated {product.name} quantity to {cart[product_type_id]}'),
     else:
-        cart.pop(item_id)
-        messages.success(request, f'Removed {retreat.name} from your cart')
+        del cart[product_type_id]
+        messages.success(request, f'Removed {product.name} to your cart'),
 
     request.session['cart'] = cart
-   
+    
     return redirect(reverse('view_cart'))
 
 
 def remove_from_cart(request, item_id):
     """ Remove a specified retreat to the shopping cart """
-    retreat = get_object_or_404(Retreat, pk=item_id)
+    product_models = {
+        "class": Class,
+        "retreat": Retreat,
+    }
+
+    model = product_models.get(type)
+    product = get_object_or_404(model, pk=item_id)
     cart = request.session.get('cart', {})
     
     cart.pop(item_id)
-    messages.success(request, f'Removed {retreat.name} from your cart')
+    messages.success(request, f'Removed {product.name} from your cart')
     request.session['cart'] = cart
    
     return HttpResponse(status=200)

@@ -13,34 +13,35 @@ def cart_contents(request):
     cart_items = []
     total = 0
     product_count = 0
-    cart = request.session.get('cart', {})
-    print(cart)
+    cart = request.session.get('cart', {})    
 
-    for item_id, quantity in cart.items():
-        item_type_and_id = item_id.split('_')
+    for item, quantity in cart.items():
+        item_type_and_id = item.split('_') #Split the retreats and classes item into types and ids
         product_type=item_type_and_id[0]
-        product_id=item_type_and_id[1]
+        item_id=item_type_and_id[1]
         if(product_type=='retreat'):
             try:
-                product = Retreat.objects.get(pk=product_id)
-            except Retreat.DoesNotExist:
-                #product = get_object_or_404(Class, pk=item_id)
+                product = Retreat.objects.get(pk=item_id)
+            except Retreat.DoesNotExist:                
                 print("Product does not exist")
         else:# Type is Class here
             try:
-                product = Class.objects.get(pk=product_id)
-            except Class.DoesNotExist:
-                #product = get_object_or_404(Class, pk=item_id)
+                product = Class.objects.get(pk=item_id)
+            except Class.DoesNotExist:                
                 print("Class does not exist")
 
         total += quantity * product.price
         product_count += quantity
         cart_items.append({
-            'item_id': product_id,
+            'item_id': item_id,
             'quantity': quantity,
-            'retreat': product,
+            'product': product,
+            'item': item,
         })
-
+        print(item_type_and_id)
+        print(item_id)
+        print(item)
+        
     grand_total = total
 
     context = {
@@ -49,6 +50,5 @@ def cart_contents(request):
         'retreat_count': product_count,
         'grand_total': grand_total,
     }
-    print(cart_items)
-    print(grand_total)
+    
     return context
