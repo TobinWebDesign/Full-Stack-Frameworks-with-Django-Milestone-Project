@@ -1,0 +1,1 @@
+web: gunicorn yoga4life.wsgi:application
