@@ -34,7 +34,6 @@ def add_review(request):
         form = ReviewForm(request.POST)
         if form.is_valid():
             review = Review()
-            review.pub_date = datetime.datetime.now()
             review = form.save()
             messages.success(request, 'Yey! Successfully added review!')
             return redirect(reverse('reviews'))
@@ -47,5 +46,4 @@ def add_review(request):
     context = {
         'form': form,
     }
-
     return render(request, template, context)

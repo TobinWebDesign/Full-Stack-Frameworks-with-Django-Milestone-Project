@@ -34,7 +34,6 @@ class Review(models.Model):
         (9, 'Iyengar Yoga'),
     )
     product = models.IntegerField(choices=PRODUCT_CHOICES)
-    pub_date = models.DateTimeField('date published')
     user_name = models.CharField(max_length=100)
     comment = models.CharField(max_length=200)
     rating = models.IntegerField(choices=RATING_CHOICES)
