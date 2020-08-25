@@ -79,7 +79,8 @@
                                             </div>
                                         </form>
                                         <a class="update-link text-info"><small>Update</small></a>
-                                        <a class="remove-item text-danger float-right" id="{{ item.item }}"><small>Remove</small></a>                                        
+                                        <!-- updated the id target the item  -->
+                                        <a class="remove-item text-danger float-right" id="{{ item.item }}"><small>Remove</small></a>                                       
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">${{ item.product.price }}</p>
@@ -134,7 +135,9 @@
         form.submit();
     })
 
-    // Remove item and reload on click
+    // Remove item and reload on click. 
+
+    // Updated JS to not split the id
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id');
