@@ -23,17 +23,18 @@ class Review(models.Model):
         (5, '5'),
     )
     PRODUCT_CHOICES = (
-        (1, '5 Day Meditation in Morocco'),
-        (2, '7 Day Authentic Yoga Retreat in Ireland'),
-        (3, '5 Day Authentic Yoga in Italy'),
-        (4, 'Surf & yoga in Ireland'),
-        (5, 'Hatha Yoga'),
-        (6, 'Yoga 4 Beginners'),
-        (7, 'Ashtanga Yoga'),
-        (8, 'Vinyasa yoga'),
-        (9, 'Iyengar Yoga'),
+        ('5 Day Meditation in Morocco', '5 Day Meditation in Morocco'),
+        ('7 Day Authentic Yoga Retreat in Ireland', '7 Day Authentic Yoga Retreat in Ireland'),
+        ('5 Day Authentic Yoga in Italy', '5 Day Authentic Yoga in Italy'),
+        ('Surf & yoga in Ireland', 'Surf & yoga in Ireland'),
+        ('Hatha Yoga', 'Hatha Yoga'),
+        ('Yoga 4 Beginners', 'Yoga 4 Beginners'),
+        ('Ashtanga Yoga', 'Ashtanga Yoga'),
+        ('Vinyasa yoga', 'Vinyasa yoga'),
+        ('Iyengar Yoga', 'Iyengar Yoga'),
     )
-    product = models.IntegerField(choices=PRODUCT_CHOICES)
+    product = models.CharField(max_length=200, choices=PRODUCT_CHOICES)
+    date = models.DateTimeField(auto_now_add=True)
     user_name = models.CharField(max_length=100)
     comment = models.CharField(max_length=200)
     rating = models.IntegerField(choices=RATING_CHOICES)

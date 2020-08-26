@@ -32,27 +32,15 @@
                                     {% else %}
                                         <small class="text-gold">No Rating</small>
                                     {% endif %}
+                                    <p class="mb-0 text-right">{{ review.user_name }}</p>
                                     <p class="mb-0 font-weight-bold">{{ review.product }}</p>
                                     <p class="mb-0">{{ review.comment }}</p>
                                 </div>
                                 <div class="card-footer pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold"> by {{ review.user_name }}</p>
-                                            {% if review.rating %}
-                                            <div class="card-white-sm">
-                                                <small class="text-gold"><i class="fas fa-star mr-1"></i>{{ review.rating }} / 5</small>
-                                            </div>
-                                            {% else %}
-                                                <small class="text-gold">No Rating</small>
-                                            {% endif %}
-                                            {% if request.user.is_superuser %}
-                                                <small class="ml-3">
-                                                    <a href="">Edit</a> | 
-                                                    <a class="text-danger" href="">Delete</a>
-                                                </small>
-                                            {% endif %}
-                                        </div>
+                                             <p class="mb-0 text-right">{{ review.date.date }}</p>     
+                                        </div>                                                                      
                                     </div>
                                 </div>
                             </div>

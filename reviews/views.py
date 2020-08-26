@@ -8,7 +8,7 @@ def all_reviews(request):
 
     """ A view to show all reviews """
 
-    reviews = Review.objects.all()
+    reviews = Review.objects.order_by('-date') #to display reviews by latest review
 
     context = {
         'reviews': reviews
