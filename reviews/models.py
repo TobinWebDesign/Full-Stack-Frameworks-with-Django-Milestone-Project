@@ -34,7 +34,7 @@ class Review(models.Model):
         ('Iyengar Yoga', 'Iyengar Yoga'),
     )
     product = models.CharField(max_length=200, choices=PRODUCT_CHOICES)
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     user_name = models.CharField(max_length=100)
     comment = models.CharField(max_length=200)
     rating = models.IntegerField(choices=RATING_CHOICES)
