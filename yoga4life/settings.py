@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'profiles',
     'classes',
     'reviews',
-    
+
     # Other 
     'crispy_forms',
     'storages',
@@ -81,13 +81,13 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', # REQUIRED BY DJANGO ALLAUTH
+                'django.template.context_processors.request',  # REQUIRED BY DJANGO ALLAUTH
                 'django.contrib.auth.context_processors.auth', 
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'cart.contexts.cart_contents',
             ],
-           'builtins': [
+            'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
                 'crispy_forms.templatetags.crispy_forms_field',
             ]
@@ -99,16 +99,16 @@ TEMPLATES = [
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTHENTICATION_BACKENDS = [
-   
+
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
-    
+
 ]
 
-SITE_ID = 1 #
+SITE_ID = 1
 
 # temporarily log emails to the console to get the confirmation links
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
