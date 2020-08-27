@@ -30,7 +30,7 @@
 ## Welcome to  Yoga4Life
 
 <p align="center">
-    <img src="" alt="Yoga4Life Logo">
+    <img src="static/images/Yoga4life_Logo.png" alt="Yoga4Life Logo">
 </p>
 
 ***

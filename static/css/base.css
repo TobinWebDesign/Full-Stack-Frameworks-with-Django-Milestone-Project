@@ -26,6 +26,10 @@ body {
     width: 1.5rem;
 }
 
+.logo {
+    width: 250px;
+}
+
 .logo-font {
     text-transform: uppercase;
     color: #0f161f;
