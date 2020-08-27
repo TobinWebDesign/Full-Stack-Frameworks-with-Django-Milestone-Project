@@ -36,11 +36,10 @@
 ***
 
 ## What does it do and what does it need to fulfill?
-This Milestone project creation is the culmination of learning and study from all modules of the Full Stack Developer Course, culminating in the creation of this Full Stack Framework Django project. This Application will allow an admin to store and manipulate data records and also allow users to create, read, update, delete & purchase memberships for this newly create local barbell club called, <a href="">Yoga4Life
-</a>.
+This Milestone project creation is the culmination of learning and study from all modules of the Full Stack Developer Course, culminating in the creation of this Full Stack Framework Django project. This Application will allow an admin to store and manipulate data records and also allow users to create, read, update, delete & purchase retreats and yoga classes. This website is to emulate a Yoga webpage offering retreats and classes to those who practice yoga but offering different places to retreat and yoga classes for all levels. </a>.
 
 <p align="center">
-    <img src="" alt="Yoga4Life Favicon">
+    <img src="static/images/yoga4life_favicon.png" alt="Yoga4Life Favicon">
 </p>
 
 ### Functionality of Project
@@ -52,56 +51,68 @@ This application contains ....
 
 #### User Stories:
 _Generic (Guest/Public) User:_
- As a Generic User, I want to be able to view the site on any device I may have, (mobile/tablet/desktop).
-* As a Generic User, I want to have the ability to register to the site.
-* As a Generic User, I want to have the ability to research the business and anything associated with same through the application.
-* As a Generic User, I want to have the ability to view the established Accessibility Statement & Privacy Policy if any.
-* As a Generic User, I want to be able to view available Membership prices.
-* As a Generic User, I want to be able to view available Drop-in prices.
-* As a Generic User, I want to be able to get in contact with the business owner through the website.
-* As a Generic User, I want to have the ability to see the established social accounts coupled with the business, eg: Facebook, Instagram etc.
-* As a Generic User, I want to have information available as to the directions of the business site.
+* As a Generic User, I want to be able to view the site on multiple devices. (mobile/tablet/desktop).
+* As a Generic User, I want to find a yoga retreat that I would like to go on.
+* As a Generic User, I want to find yoga classes that are available. 
+* As a Generic User, I want to find yoga retreats and browse them.
+* As a Generic User, I want to be able to book a yoga retreat.
+* As a Generic User, I want to be able to book a yoga class.
+* As a Generic User, I want to book and pay using a fast, reliable and trustworthy online system.
+* As a Generic User, I want to checkout using card payment.
+* As a Generic User, I want to recieve email confirmation with details of my purchase.
+* As a Generic User, I want to view reviews from other customers 
+* As a Generic User, I want to to be able to leave a review 
+
+_Business (Application Owner/Administrator) User:_ 
+* As a Business User, I want to I want to be able to login to an administration panel.
+* As a Business User, I want to attract new customers.
+* As a Business User, I want to provide all the customers information they need online so that they do need to call and email.
+* As a Business User, I want to seemless booking system for customers
+* As a Business User, I want to easily take payment from customers
+* As a Business User, I want to automatic email notifications for my customers
+* As a Business User, I want to be able to add new retreats
+* As a Business User, I want to be able to edit retreats
+* As a Business User, I want to be able to add new yoga classes
+* As a Business User, I want to be able to edit yoga classes
 
 _Registers (Logged in) User:_
 * As a Registered User, I want to have the ability to Login to the site via my registered details.
-* As a Registered User, I want to have the ability to review membership options and but choose one.
+* As a Registered User, I want to create and edit a profile. 
+* As a Registered User, I want to be able to see my previous purchases
 * As a Registered User, I want to be able to view my Cart and any items I currently have awaiting payment in my Cart.
 * As a Registered User, I want to be able to items currently added to my Cart.
 * As a Registered User, I want to have the ability to Logout of the application.
 
-_Application Owner/Administrator User:_
-* As a Site Administrator, I want to be able to login to an administration panel.
-* As a Site Administrator, I want to have the ability to update site content, i.e Membership packages.
-* As the Owner, I want to ensure any user navigating to my site has a positive User experience between content and responsive design.
-* As the Owner, I want to show any user navigating to my site the facilities, services & pricing available.
-
-
 #### Design
 
 ##### 1. Font
-The project has a main font of <a href="">Roboto Condensed</a> which is used for primary texts and headers, and a secondary font of <a href="">Lato</a>, both of which greatly complement each other throughout the site.
+The project has a main font <a href="https://fonts.google.com/specimen/Roboto">Roboto</a> which greatly complement each other throughout the site. “Sans-Serif” is used as the default backup font in cases where these fonts have difficulty loading. Roboto is a user friendly font which give a proper reading in different screen sizes.
 
 “Sans-Serif” is used as the default backup font in cases where these fonts have difficulty loading.
-Roboto Condensed sports a unique ...
 
-The secondary font of Lato has a natural flow...
 
 ##### 2. Color Scheme
 This project went through multiple theme iterations whilst in Wireframe stage. Ultimately, I was always lead back to professional high contrast finish that would normally be seen in most day-to-day apps with a touch of pastel color to highlight to the user the breakaway elements.
 
-* ![#b28262](https://placehold.it/15/b28262/000000?text=+) `#b28262` - Primary color
+* ![#88583d](https://placehold.it/15/88583d/000000?text=+) `#88583d` - Primary color
+* ![#ffffff](https://placehold.it/15/dbd4d7/000000?text=+) `#fffff` - Secondary color
 * ![#dbd4d7](https://placehold.it/15/dbd4d7/000000?text=+) `#dbd4d7` - Secondary color
 * ![#0f161f](https://placehold.it/15/0f161f/000000?text=+) `#0f161f` - Tertiary color
-* ![#c6aaa0](https://placehold.it/15/c6aaa0/000000?text=+) `#c6aaa0` - Supplementary color #1
-* ![#88583d](https://placehold.it/15/88583d/000000?text=+) `#88583d` - Supplementary color #2
+* ![#b28262](https://placehold.it/15/b28262/000000?text=+) `#b28262` - Supplementary color #1
+* ![#c6aaa0](https://placehold.it/15/c6aaa0/000000?text=+) `#c6aaa0` - Supplementary color #2
 
-The colors used throughout and what for etc....
+
+The colours used throughout are based on a ![#88583d](https://placehold.it/15/88583d/000000?text=+) brown colour pallet. 
+Brown is a natural color that evokes a sense of strength and reliability. It's often seen as solid, much like the earth, and fits well with the ground experience of yoga.
+
+The primary call to action buttons, the searchbox, and the icons used the primary colour, ![#88583d](https://placehold.it/15/88583d/000000?text=+) , setting the immediate tone for the rest of the application to be professional and aesthetically pleasing. Fonts used throughout the application utilise the tertiary color ![#0f161f](https://placehold.it/15/0f161f/000000?text=+).
+The background, secondary call to action buttons, and the navbar is colored in our Secondary color choice, ![#ffffff](https://placehold.it/15/dbd4d7/000000?text=+) , which offered the first splash of vibrant color to contrast the logo and the nav-link elements.
+The hero image used the Supplementary color #1 ![#b28262](https://placehold.it/15/b28262/000000?text=+) as a baground colour.
 
 ##### 3. Logo
-The logo was ...
 
 <p align="center">
-    <img src="" alt="Yoga4Life Logo">
+    <img src="static/images/Yoga4life_Logo.png" alt="Yoga4Life Logo">
 </p>
 
 ##### 4. Geometry
@@ -110,9 +121,14 @@ The applications geometrical aspects...
 
 ##### 5. Wireframing
 
-Wireframing for this project began with Pen and paper as all my projects tend to start, but ultimately Wireframes were created using Balsamiq. Each page or view of the application was rendered as a wireframe in both Small and Medium-Large viewports to show the difference between the aesthetics and showing how the elements per page would react to differing viewport sizes. Each element planned out in this stage has made it into the physical build of the application with not much deviation occurring from the original wireframe plans.
+Wireframing for this project were created using AdobeXD. Each page or view of the application was rendered as a wireframe in both Mobile and Desktop viewports to show the difference between the aesthetics and showing how the elements per page would react to differing viewport sizes. 
+
+Initial Wireframes for the site: <a href="https://github.com/TobinWebDesign/Milestone-Project-Data-Centric-Development-Milestone-Project-/tree/master/wireframes">Wireframes</a> 
 
 * Base Template:
+
+The base.html parent template contains the default components that are to be shared with the child templates in the app. All meta tags can be found here as well links to frameworks, stylesheets and scripts. The navbar and mobile header partial components have their own html files and inserted into the base.html
+The navbar partial template component contains all primary relevant navigation throughout the site, including a search bar, shopping cart, and Register/Login button.
 
 The base.html parent template ...;
 ```html
@@ -128,7 +144,7 @@ The base.html parent template ...;
 </p>
 
 <p align="center">
-<img height="350" src="" alt="Base template tablet-desktop wireframe">
+<img height="350" src="static/images/" alt="Base template tablet-desktop wireframe">
 </p>
 </details>
 
@@ -136,10 +152,138 @@ The base.html parent template ...;
 
 * Home Page:
 
-
+The home (Index) page is our primary landing page and has two call to actions buttons on the left of screen: 1. View retreats 2. View yoga time table.
 ***
 
 [Back to Top](#table-of-contents)
+
+<p align="center">
+<img height="350" src="static/images/homepage.png" alt="Base template tablet-desktop wireframe">
+</p>
+</details>
+
+* Retreat Page:
+
+The Home (Index) Page contained all the major navigation points for the user. It does not contain a hero image to maintain a clean and simple theme not destracting fromt the main focus of the app. A simple heading and subheading defining nature of the application as well as a choice of call to action buttons. 
+Below the Latest Recipes are desplayed. 
+
+<details>
+<summary>Retreat Wireframes</summary>
+
+<p align="center">
+    <img height="350" src="static/images/homepage.png" alt="retreat page desktop wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="https://github.com/TobinWebDesign/Milestone-Project-Data-Centric-Development-Milestone-Project-/blob/master/wireframes/Desktop%20homepage.png" alt="Home page tablet-desktop wireframe">
+</p>
+</details>
+
+***
+
+* Login Page:
+
+STILL IN PRODUCTION
+A simple page as normal inheriting the navbar and footer from the base.html file.
+
+<details>
+<summary>Login Wireframes</summary>
+
+<p align="center">
+    <img height="350" src="https://github.com/TobinWebDesign/Milestone-Project-Data-Centric-Development-Milestone-Project-/blob/master/wireframes/mobile%20login%20page.png" alt="Login page mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="static/images/signup.png" alt="Login page tablet-desktop wireframe">
+</p>
+</details>
+
+***
+
+* Add retreats/reviews/details Page:
+
+
+<details>
+<summary>Add retreats/reviews/details Wireframes</summary>
+
+<p align="center">
+    <img height="350" src="static/images/addpages.png" alt="Add retreats/reviews/details page mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="static/images/addpages.png" alt="Add retreats/reviews/details page tablet-desktop wireframe">
+</p>
+</details>
+
+***
+
+* Cart Page:
+
+
+<details>
+<summary>Cart Wireframes</summary>
+
+<p align="center">
+    <img height="350" src="" alt="Cart page mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="static/images/Cart.png" alt="Cart page tablet-desktop wireframe">
+</p>
+</details>
+
+***
+
+* Edit Page:
+
+
+<details>
+<summary>Edit Wireframes</summary>
+
+<p align="center">
+    <img height="350" src="" alt="Edit page mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="static/images/editpages.png" alt="Edit page desktop wireframe">
+</p>
+</details>
+
+***
+
+* Checkout Page:
+
+
+<details>
+<summary>Checkout Wireframes</summary>
+
+<p align="center">
+    <img height="350" src="" alt="Checkout page mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="static/images/checkout.png" alt="Checkout page desktop wireframe">
+</p>
+</details>
+
+***
+
+* reviews Page:
+
+
+<details>
+<summary>reviews Wireframes</summary>
+
+<p align="center">
+    <img height="350" src="" alt="reviews page mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="static/images/reviews.png" alt="reviews page desktop wireframe">
+</p>
+</details>
+
+***
 
 ## Technology Used
 
@@ -157,17 +301,22 @@ controlling throughout the life-cycle of the project build.
 
 #### Tools Used:
 
-* <a href="">PostgreSQL</a> ~ A free and open-source relational database management system emphasizing extensibility and technical standards compliance. Designed to handle high range of workloads including Web services with many concurrent users.
-* <a href="https://mycolor.space/">ColorSpace</a> ~ Used to find complimentary color schemes used throughout the application.
-* <a href="http://eye-dropper.kepi.cz/">Eye Dropper (Color Picker)</a> ~ Open Source Google Chrome Extension used to obtain hexadecimal/rgba/hsl values of colours. Built by Kepi (<a href="https://github.com/kepi">Kepi's Github</a>)
-* Google Chrome DevTools ~ Used to test the application's functionality, the responsiveness of same, and the CSS visualisation, as well as assisting in such tasks as figuring out the correct style properties to override Bootstraps user agent styling.
-* <a href="https://balsamiq.com/">Balsamiq</a> ~ Used for the creation of my pre-build wireframes showing the main elements and differences in size of same through small to large screen sizes.
-* <a href="https://realfavicongenerator.net/">Favicon Generator</a> ~ Used to create favicon from custom Logo I created for the project.
-* <a href="https://validator.w3.org/">W3C HTML Validator</a> & <a href="https://validator.w3.org/">W3C CSS Validator</a> & <a href="https://jshint.com/">JSHint</a> ~ Used to check the validity and efficiency of my code.
-* <a href="https://autoprefixer.github.io/">Autoprefixer CSS Online</a> ~ Used to check for possible webkits required in the applications stylesheet ensuring Cross-browser support.
-* <a href="http://pep8online.com/">PEP 8 Online Validator</a> ~ to check my python code to be consistent with PEP8 requirements.
-* Adobe Photoshop ~ to create the custom long and short variations of the Logo for this application.
-* <a href="https://fontawesome.com/icons?d=gallery">Font Awesome Icons</a> ~ For social icons used in Footer.
+* [Gitpod](https://www.gitpod.io/) is the IDE used for developing this project.
+* [Visual Studio Code](https://code.visualstudio.com/) is the IDE used for developing this project locally when no internet was available. Also for using extensions which proved to be more reliable in VSC than in the more rececently established gitpod e.g. beautifying the code
+* [Django](https://www.djangoproject.com/) as python web framework for rapid development and clean design.
+* [Stripe](https://stripe.com/gb) as payment platform to validate and accept credit card payments securely.
+* [AWS S3 Bucket](https://aws.amazon.com/)  to store static files and images entered into the database.
+* [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) to enable creation, configuration and management of AWS S3
+* [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) to style django forms.
+* [Heroku](https://www.gitpod.io/) Heroku for deployment
+* [Django Storages](https://django-storages.readthedocs.io/en/latest/) a collection of custom storage backends with django to work with boto3 and AWS S3.
+* [Gunicorn](https://pypi.org/project/gunicorn/)WSGI HTTP Server for UNIX to aid in deployment of the Django project to heroku.
+* [Pillow](https://pillow.readthedocs.io/en/stable/)as python imaging library to aid in processing image files to store in database.
+* [Psycopg2](https://pypi.org/project/psycopg2/) as PostgreSQL database adapter for Python.
+* [PIP](https://pip.pypa.io/en/stable/installing/) for installation of tools needed in this project.
+* [Github](https://github.com/) to store and share all project code remotely.
+* [Canva](https://www.canva.com/) to edit and crop images.
+* [Adobe XD/](https://www.adobe.com/products/xd.html)to create the wireframes for this project.
 
 ## Database
 
@@ -177,8 +326,36 @@ Detail the db schema here....images, thoughts behind fks etc
 
 ## Features
 
-The project boasts several key features:
-* Create: ...
+Yoga4Life app is made up of by 7 different applications: profiles, cart, checkout, search, reviews, classes and retreats. Using MVC architecture from the Django framework, each application holds its own model and viewswhich interact with eachother via the yoga4life folder.
+
+### Cart
+
+* The cart app gives the user the ability to view, add, adjust, and remore retreats and classes to the cart as they wish. 
+
+### Checkout
+
+* The checkout application holds and manipulates the Stripe API. In which empowers the overall application with the e-commerce functionality.
+
+### Classes
+
+* The classes page will display all of the Yoga classes available and a weekly timetable
+
+### Profile
+
+* The profile app allows users to register and add profile which contains login/register pages as well as a user profile page.
+
+### Search
+
+* The search app has a simple search functionality that is used to find different retreats on the web app.
+
+### Admin
+
+* The Admin page
+
+### 404 page
+
+* The Admin page
+
 
 [Back to Top](#table-of-contents)
 
