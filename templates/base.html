@@ -18,7 +18,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">      
         <!-- Favicon -->
-        <link rel="shortcut icon" href="static/images/yoga4life_favicon.png" type="image/x-icon">  
+        <link rel="shortcut icon" href="{% static 'images/yoga4life_favicon.png' %}" type="image/x-icon">  
     {% endblock %}
 
     {% block extra_css %}        
@@ -30,15 +30,15 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <!-- Stripe JS -->
-        <script src="https://js.stripe.com/v3/"></script>
+        <script src="https://js.stripe.com/v3/"></script>   
+        <!-- Start of HubSpot Embed Code -->
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/8361234.js"></script>
+        <!-- End of HubSpot Embed Code -->
     {% endblock %}
-
-    {% load drift_chat_widget %}
-    {% drift_chatwidget %}
     
     {% block extra_js %}
     {% endblock %}
-
+    
     <title>Yoga 4 Life {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
@@ -117,8 +117,8 @@
                 <h4 class="logo-font-white my-1">7 Day FREE Trial </h4>                
             </div>            
         </div>
-    </header>
-
+    </header>   
+    
     {% if messages %}
         <div class="message-container">
             {% for message in messages %}

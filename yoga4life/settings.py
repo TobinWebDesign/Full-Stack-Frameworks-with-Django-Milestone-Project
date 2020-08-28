@@ -53,8 +53,7 @@ INSTALLED_APPS = [
 
     # Other 
     'crispy_forms',
-    'storages',
-    'drift_chatwidget',
+    'storages',    
 ]
 
 MIDDLEWARE = [
@@ -224,8 +223,3 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
-# Drift Chat app
-DRIFT_CHAT_WIDGET = {
-'ID': '[5mxwkk2d8gex]'
-}
