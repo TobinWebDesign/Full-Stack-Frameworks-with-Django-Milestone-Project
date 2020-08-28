@@ -389,7 +389,47 @@ Defensive design for this application was...
 
 ## Deployment
 
-Detail deployment here...
+# Deployment
+
+To deploy Yoga4Life to heroku, the following steps should be taken:
+
+* Create a requirements.txt file using the terminal command pip3 freeze > requirements.txt.
+
+* Create a Procfile with the terminal command echo web: python3 manage.py > Procfile.
+
+* git add and git commit the new requirements and Procfile and then git push the project to GitHub.
+
+* Create a new app on the Heroku website by clicking the "New" button in your dashboard. Give it a name and set the region to Europe. 
+
+* From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+
+*  Confirm the linking of the heroku app to the correct GitHub repository.
+
+* In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+
+Set the following config vars:
+
+* AWS_ACCESS_KEY_ID	
+* AWS_SECRET_ACCESS_KEY	
+* AWS_DEFAULT_ACL 
+* USE_AWS 
+* DATABASE_URL	
+* EMAIL_HOST_PASS	
+* EMAIL_HOST_USER	
+* SECRET_KEY	
+* STRIPE_SECREY_KEY	
+* STRIPE_PUBLIC_KEY	
+* GITPOD_STRIPE_SECRET
+
+In your heroku dashboard, click "Deploy". Scroll down to "Manual Deploy", select the master branch then click "Deploy Branch".
+
+Once the build is complete, click the "Open app" button provided.
+
+From the link provided add /admin to the end of the url, log in with your superuser account 
+
+Create instances within each model set up within the new database.
+
+Once instances of these items exist in your database your heroku site will run as expected.
 
 [Back to Top](#table-of-contents)
 
