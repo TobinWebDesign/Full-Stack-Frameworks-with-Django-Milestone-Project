@@ -479,6 +479,22 @@ Testing toasts:
 
 * Confirmation that confirmation that all products can be updated and deleted by loggedin superusers only
 
+#### Automatic Testing
+
+I used TestCase for the automatic testing of retreats and classes. This was only done my conntected to the SQLite database
+
+Another point to mention is that the tests should be added in local database as I did not learned how to apply them into the production database. 
+Therefore to run the test and check the output, you need to remove or comment the first database (Postgres) and run the command to see the test output.
+
+### Command used to trigger the tests
+
+```
+  - `$ python manage.py test`
+
+  - Output:
+
+```
+<img height="350" src="static/images/autotestresults.JPG" alt="screenshot of automatic test output">
 
 [Back to Top](#table-of-contents)
 
