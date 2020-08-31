@@ -143,7 +143,7 @@ body {
 }
 
 .card-white-sm {
-    padding: 4px, 2px;
+    padding: 4px 2px;
     background-color: white;
     border-radius: 2px;
     max-width: 75px;
@@ -152,7 +152,7 @@ body {
 .card-white-lg {
     width: 100%;
     height: auto;
-    padding: 4px, 2px;
+    padding: 4px 2px;
     background-color: white;
     border-radius: 2px;
     font-size: 48px;
@@ -325,7 +325,7 @@ body {
 
 .allauth-form-inner-content input {
     border-color: #88583d;
-    border-radius: 4;
+    border-radius: 4px;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
