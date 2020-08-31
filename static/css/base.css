@@ -181,6 +181,10 @@ body {
     background: #88583d;
 }
 
+.bg-brown:hover {
+    text-decoration: none;
+}
+
 .card {
     color: white;
     background-color:#c6aaa0;
