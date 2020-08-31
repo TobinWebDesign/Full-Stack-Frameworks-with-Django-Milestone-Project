@@ -38,10 +38,7 @@ def cart_contents(request):
             'product': product,
             'item': item, # item can be either a retreat+id or a class+id
         })
-        print(item_type_and_id)
-        print(item_id)
-        print(item)
-        
+      
     grand_total = total
 
     context = {

@@ -43,8 +43,12 @@ This Milestone project creation is the culmination of learning and study from al
 </p>
 
 ### Functionality of Project
-This application contains ....
+The <a herf="https://yoga4life.herokuapp.com/">Yoga4Life App</a> utilizes Django 3 to empower quick web developlemt taking advantage of Django's claim to fame "The web framework for perfectionists with deadlines.".
+Working with Django, sqlite was utilized in the Project's initiation stage as a test database for testing the applications local environment. SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. Once the Yoga4life application was read for deployment on Heroku I transfered the database to PostGreSQL. PostgreSQL is a powerful, open source object-relational database which has a strong strong reputation for reliability, feature robustness, and performance.
 
+The combination of Django and a cdatabase allows for an admin section where one can Create, Read, Update and Delete records.
+The project is version controlled via Git & Github and is deployed via Heroku.
+Payment testing was achieved using Stripe test card numbers when can be found <a herf="https://stripe.com/docs/testing#cards">here</a>
 [Back to top](#table-of-contents)
 
 ## User Experience:
@@ -86,18 +90,17 @@ _Registers (Logged in) User:_
 #### Design
 
 ##### 1. Font
-The project has a main font <a href="https://fonts.google.com/specimen/Roboto">Roboto</a> which greatly complement each other throughout the site. “Sans-Serif” is used as the default backup font in cases where these fonts have difficulty loading. Roboto is a user friendly font which give a proper reading in different screen sizes.
-
+The project has a main font <a href="https://fonts.google.com/specimen/Roboto">Roboto</a> which greatly complement each other throughout the site. 
+Roboto is a user friendly font which give a proper reading in different screen sizes.
 “Sans-Serif” is used as the default backup font in cases where these fonts have difficulty loading.
 
 
 ##### 2. Color Scheme
-This project went through multiple theme iterations whilst in Wireframe stage. Ultimately, I was always lead back to professional high contrast finish that would normally be seen in most day-to-day apps with a touch of pastel color to highlight to the user the breakaway elements.
 
 * ![#88583d](https://placehold.it/15/88583d/000000?text=+) `#88583d` - Primary color
-* ![#ffffff](https://placehold.it/15/dbd4d7/000000?text=+) `#fffff` - Secondary color
+* ![#ffffff](https://placehold.it/15/ffffff/000000?text=+) `#fffff` - Tertiary color
+* ![#0f161f](https://placehold.it/15/0f161f/000000?text=+) `#0f161f` - Secondary color
 * ![#dbd4d7](https://placehold.it/15/dbd4d7/000000?text=+) `#dbd4d7` - Secondary color
-* ![#0f161f](https://placehold.it/15/0f161f/000000?text=+) `#0f161f` - Tertiary color
 * ![#b28262](https://placehold.it/15/b28262/000000?text=+) `#b28262` - Supplementary color #1
 * ![#c6aaa0](https://placehold.it/15/c6aaa0/000000?text=+) `#c6aaa0` - Supplementary color #2
 
@@ -105,9 +108,9 @@ This project went through multiple theme iterations whilst in Wireframe stage. U
 The colours used throughout are based on a ![#88583d](https://placehold.it/15/88583d/000000?text=+) brown colour pallet. 
 Brown is a natural color that evokes a sense of strength and reliability. It's often seen as solid, much like the earth, and fits well with the ground experience of yoga.
 
-The primary call to action buttons, the searchbox, and the icons used the primary colour, ![#88583d](https://placehold.it/15/88583d/000000?text=+) , setting the immediate tone for the rest of the application to be professional and aesthetically pleasing. Fonts used throughout the application utilise the tertiary color ![#0f161f](https://placehold.it/15/0f161f/000000?text=+).
-The background, secondary call to action buttons, and the navbar is colored in our Secondary color choice, ![#ffffff](https://placehold.it/15/dbd4d7/000000?text=+) , which offered the first splash of vibrant color to contrast the logo and the nav-link elements.
-The hero image used the Supplementary color #1 ![#b28262](https://placehold.it/15/b28262/000000?text=+) as a baground colour.
+The primary call to action buttons, the searchbox, and the icons used the primary colour, ![#88583d](https://placehold.it/15/88583d/000000?text=+) , setting the immediate tone for the rest of the application to be professional and aesthetically pleasing. Fonts used throughout the application utilise the Secondary color ![#0f161f](https://placehold.it/15/0f161f/000000?text=+).
+The background, secondary call to action buttons, and the navbar is colored in our Tertiary color choice, ![#ffffff](https://placehold.it/15/dbd4d7/000000?text=+) , which allows for a clean design giving the app space to breath. 
+The hover effects of the icond and primary Call To Action Buttons use Supplementary color #1 ![#b28262](https://placehold.it/15/b28262/000000?text=+) and the hero image used the Supplementary color #2 ![#b28262](https://placehold.it/15/b28262/000000?text=+) as a baground colour.
 
 ##### 3. Logo
 
@@ -117,13 +120,13 @@ The hero image used the Supplementary color #1 ![#b28262](https://placehold.it/1
 
 ##### 4. Geometry
 
-The applications geometrical aspects...
+The geometry of the application features aesthetically modern components such as rounded edges. There was inspiration for webiste  such as Airbnb and Stripe when deciding on the minimlist number of menu options and settling on two clean Call To Action buttons with highly contrasting colours on the Hero section. 
 
 ##### 5. Wireframing
 
 Wireframing for this project were created using AdobeXD. Each page or view of the application was rendered as a wireframe in both Mobile and Desktop viewports to show the difference between the aesthetics and showing how the elements per page would react to differing viewport sizes. 
 
-Initial Wireframes for the site: <a href="https://github.com/TobinWebDesign/Milestone-Project-Data-Centric-Development-Milestone-Project-/tree/master/wireframes">Wireframes</a> 
+Initial Wireframes for the site: <a href="https://github.com/TobinWebDesign/Full-Stack-Frameworks-with-Django-Milestone-Project/tree/master/wireframes">Wireframes</a> 
 
 * Base Template:
 
@@ -158,7 +161,11 @@ The home (Index) page is our primary landing page and has two call to actions bu
 [Back to Top](#table-of-contents)
 
 <p align="center">
-<img height="350" src="static/images/homepage.png" alt="Base template tablet-desktop wireframe">
+<img height="350" src="wireframes/images/mobile_home.png" alt="Base template tablet-desktop wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="wireframes/images/homepage.png" alt="Base template tablet-desktop wireframe">
 </p>
 </details>
 
@@ -171,30 +178,28 @@ Below the Latest Recipes are desplayed.
 <summary>Retreat Wireframes</summary>
 
 <p align="center">
-    <img height="350" src="static/images/homepage.png" alt="retreat page desktop wireframe">
+    <img height="350" src="static/images/retreats.png" alt="retreat page desktop wireframe">
+</p>
+<p align="center">
+    <img height="350" src="static/images/retreats.png" alt="retreat page desktop wireframe">
 </p>
 
-<p align="center">
-<img height="350" src="https://github.com/TobinWebDesign/Milestone-Project-Data-Centric-Development-Milestone-Project-/blob/master/wireframes/Desktop%20homepage.png" alt="Home page tablet-desktop wireframe">
-</p>
-</details>
 
 ***
 
 * Login Page:
 
-STILL IN PRODUCTION
 A simple page as normal inheriting the navbar and footer from the base.html file.
 
 <details>
 <summary>Login Wireframes</summary>
 
 <p align="center">
-    <img height="350" src="https://github.com/TobinWebDesign/Milestone-Project-Data-Centric-Development-Milestone-Project-/blob/master/wireframes/mobile%20login%20page.png" alt="Login page mobile wireframe">
+    <img height="350" src="wireframes/images/mobilesignup.png" alt="Login page mobile wireframe">
 </p>
 
 <p align="center">
-<img height="350" src="static/images/signup.png" alt="Login page tablet-desktop wireframe">
+    <img height="350" src="wireframes/images/signup.png" alt="Login page tablet-desktop wireframe">
 </p>
 </details>
 
@@ -207,11 +212,11 @@ A simple page as normal inheriting the navbar and footer from the base.html file
 <summary>Add retreats/reviews/details Wireframes</summary>
 
 <p align="center">
-    <img height="350" src="static/images/addpages.png" alt="Add retreats/reviews/details page mobile wireframe">
+    <img height="350" src="wireframes/images/mobileaddeditpages.png" alt="Add retreats/reviews/details page mobile wireframe">
 </p>
 
 <p align="center">
-<img height="350" src="static/images/addpages.png" alt="Add retreats/reviews/details page tablet-desktop wireframe">
+    <img height="350" src="wireframes/images/addpages.png" alt="Add retreats/reviews/details page tablet-desktop wireframe">
 </p>
 </details>
 
@@ -224,11 +229,11 @@ A simple page as normal inheriting the navbar and footer from the base.html file
 <summary>Cart Wireframes</summary>
 
 <p align="center">
-    <img height="350" src="" alt="Cart page mobile wireframe">
+    <img height="350" src="wireframes/images/mobileshoppingcart.png" alt="Cart page mobile wireframe">
 </p>
 
 <p align="center">
-<img height="350" src="static/images/Cart.png" alt="Cart page tablet-desktop wireframe">
+<img height="350" src="wireframes/images/Cart.png" alt="Cart page tablet-desktop wireframe">
 </p>
 </details>
 
@@ -241,11 +246,11 @@ A simple page as normal inheriting the navbar and footer from the base.html file
 <summary>Edit Wireframes</summary>
 
 <p align="center">
-    <img height="350" src="" alt="Edit page mobile wireframe">
+    <img height="350" src="wireframes/images/mobileaddeditpages.png" alt="Edit page mobile wireframe">
 </p>
 
 <p align="center">
-<img height="350" src="static/images/editpages.png" alt="Edit page desktop wireframe">
+<img height="350" src="wireframes/images/editpages.png" alt="Edit page desktop wireframe">
 </p>
 </details>
 
@@ -258,11 +263,11 @@ A simple page as normal inheriting the navbar and footer from the base.html file
 <summary>Checkout Wireframes</summary>
 
 <p align="center">
-    <img height="350" src="" alt="Checkout page mobile wireframe">
+    <img height="350" src="wireframes/images/mobilecheckoutpage.png.png" alt="Checkout page mobile wireframe">
 </p>
 
 <p align="center">
-<img height="350" src="static/images/checkout.png" alt="Checkout page desktop wireframe">
+<img height="350" src="wireframes/images/checkout.png" alt="Checkout page desktop wireframe">
 </p>
 </details>
 
@@ -275,11 +280,11 @@ A simple page as normal inheriting the navbar and footer from the base.html file
 <summary>reviews Wireframes</summary>
 
 <p align="center">
-    <img height="350" src="" alt="reviews page mobile wireframe">
+    <img height="350" src="wireframes/images/mobilereviewspage.png" alt="reviews page mobile wireframe">
 </p>
 
 <p align="center">
-<img height="350" src="static/images/reviews.png" alt="reviews page desktop wireframe">
+<img height="350" src="wireframes/images/reviews.png" alt="reviews page desktop wireframe">
 </p>
 </details>
 
@@ -377,9 +382,103 @@ Testing toasts:
 * Then add something else to the shopping bag.
 * Test confirmed as the toast is used the error template.
 
-#### Found Bugs and Fixes:
+#### Home page 
 
-During manual testing...
+* Hero Image displays well in all browsers on all screen sizes tested.
+* Call to action Book Now buttons are obvious, well positioned and on click got to the respective pages, retreats and yoga classes timetable. 
+* Click on Logo returns to home on desktop. Mobile version is styled so logo appears above search and on click reveals the search input.
+* Tests on both mobile menu dropdown icon and desktop dropdown menus all link to the correct page. 
+* Confirm My account is visible and that when clicked the logged out the options "Register" and "Log in" are visible and that "Retreat Management", "Yoga Class Management", "My Profile" and "Log out" are not.
+* When Logged in the site as a superuser, confirm that options "Retreat Management" "Yoga Class Management", "My Profile" and "Log out" are visible and that "Register" and "Log in" are not.
+* When Logged in the site as a generic, confirm that options  "My Profile" and "Log out" are visible and that "Retreat Management", "Yoga Class Management","Register" and "Log in" are not.
+* Price is empty with without items in the cart, prices display when items are added to the cart. confirmation that price returns to zero when items are deleted from the cart. 
+* Click the "price" link in the navbar, confirm that booking is empty or that all bookings are listed. 
+* The input search box is  et up to drive traffic to the retreats page. Manual tests confirm that.
+
+
+#### Checkout page
+
+* Confirm checkout form is displayed.
+* Confirm that failure to fill out required fields will reveal an error e.g. Please enter an email address or please fill in this field.
+* Confirm that the cursor returns to the empty required field.
+* Confirm that the test card number 4242 4242 4242 4242 424 42424 process the order.
+* Confirm spinner is revealed as payment is processed.
+* Confirm that incorrect test card number has error message  "Your card number is incomplete."
+* Confirm that all correct booking details are on the checkout page with the correct total being shown and advised that "Your card will be charged £ Total due"
+* Confirm that both the "adjust booking" and "complete order" links work. 
+
+#### Checkout success
+
+* Check stripe payment has succeeded and is shown in the dahsboard.
+* Check confirmation emails have been sent to business owner , admin and user
+* Check order is in admin if authorised.
+* Check order appears on user profile page.
+* Check the link to "Now click out the latest Events is working. 
+
+#### Retreat/class Detail Page
+
+* Click on image brings up large image in new tab.
+* Confirm that for a logged in user the email address field has already been populated.
+* If logged in user is either a superuser or is the authorised site owner they will have the option to edit or delete. Check that the edit and delete coloured text is displayed when logged in. If they edit and delete text is visible, check that the edit product links to the correct product id. 
+* If not logged in you do not have the authority to edit or delete, check that the edit and delete options are not visible. 
+* Test the "Please fill in this field" tooltip is revealed if the email is attempted to be sent without completion of all the required fields.
+
+#### Retreat/class  Detail Page (
+
+* If logged in user is either a superuser or is the authorised site owner they will have the option to edit or delete. Check that the edit and delete coloured text is displayed when logged in. If they edit and delete text is visible, check that the edit campspot links to the correct campspot id. 
+* If not logged in as a superuser you do not have the authority to edit or delete, check that the edit and delete options are not visible. 
+* Click on Book Now button to test success ans warning toasts are displayed. 
+* If more than one item is added to the cart the total price is updated. 
+* Test that the keep looking link gives the option to add additional bookings.
+*  Check that the "Go to Secure Checkout" link on the success toast correctly renders the booking session on the checkout page.
+
+#### Checkout page (checkout.html)
+
+* Confirm checkout form is displayed.
+* Confirm that failure to fill out required fields will reveal errors
+* Confirm that the cursor returns to the empty required field.
+* Confirm that the test card number 4242 4242 4242 4242 424 42424 process the order.
+* Confirm spinner is revealed as payment is processed.
+* Confirm that incorrect test card number has error message  "Your card number is incomplete."
+* Confirm that all correct booking details are on the checkout page with the correct total being shown.
+* Confirm that both the "adjust booking" and "complete order" links work. 
+
+#### Checkout success (checkout.html)
+
+* Check stripe payment has succeeded and is shown in the dahsboard.
+* Check confirmation emails have been sent to business owner , admin and user
+* Check order is in admin if authorised.
+* Check order appears on user profile page.
+
+#### Register Page
+* When logged out confirmmation that the register form is displayed as expected.
+* Fill in the form with a username/ email address already in the database, confirm that the user is informed that the username already exists. 
+* Confirmation that the email input form will show an error when an non email is used.
+* Fill in password that is less than 8 characters and check the response will be " This password is too short. It must contain at least 8 characters."
+
+#### Login Page
+* Reload the login page, confirm that the message for a new account is not visible.
+* Attempt to log in with a username not in the database, confirm the relevant error message is shown.
+* Attempt to log in with a correct username but wrong password, confirm the relevant error message is shown.
+* Log in with a correct username and password, confirm that the user is logged in and that they are redirected to home page.
+* Try to return to the login page url when already logged in, confirm that the user is redirected to the home page.
+
+#### Profile Page
+* Go to the profile page of a newly created user. 
+* Confirm that the profile info form is populated with the users username and email address.
+* Confirmation that without any order history no orders show.
+* Confirmation that after orders have been made that order historyu is displayed. 
+* Confirmation that user profile is editable
+
+#### Logout Page
+
+* confirm option to cancel is working.
+* Confirm sign out works and redirects to home page. With success message "You have signed out".
+
+#### Retreat/Yoga Class management
+
+* Confirmation that confirmation that all products can be updated and deleted by loggedin superusers only
+
 
 [Back to Top](#table-of-contents)
 

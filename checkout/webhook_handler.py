@@ -133,16 +133,9 @@ class StripeWH_Handler:
                                 quantity=item_data,
                             )
                             order_line_item.save()
-                        else:
-                            for size, quantity in item_data['items_by_size'].items():
-                                order_line_item = OrderLineItem(
-                                    order=order,
-                                    retreat=retreat,
-                                    quantity=quantity,
-                                )
-                                order_line_item.save()
                     else: # Class
                         retreat = Class.objects.get(id=product_id)
+                        print('retreat')
                         if isinstance(item_data, int):
                             order_line_item = OrderLineItem(
                                 order=order,
@@ -150,15 +143,7 @@ class StripeWH_Handler:
                                 quantity=item_data,
                             )
                             order_line_item.save()
-                        else:
-                            for size, quantity in item_data['items_by_size'].items():
-                                order_line_item = OrderLineItem(
-                                    order=order,
-                                    class_detail=retreat,
-                                    quantity=quantity,
-                                )
-                                order_line_item.save()
-
+                            print('order_line_item')
             except Exception as e:
                 if order:
                     order.delete()
