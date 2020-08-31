@@ -370,20 +370,17 @@ Yoga4Life app is made up of by 7 different applications: profiles, cart, checkou
 
 * The search app has a simple search functionality that is used to find different retreats on the web app.
 
-### Admin
-
-* The Admin page
-
-### 404 page
-
-* The Admin page
 
 
 [Back to Top](#table-of-contents)
 
 #### Future Features:
 
-* Detail future implementations here...
+* Admin page graphs to display data from comments, sales and views.
+* Booking system to date sellector
+* Add multiple images on retreat/class detail pages
+* Online Yoga classes
+* Yoga Membership
 
 ## Testing
 
