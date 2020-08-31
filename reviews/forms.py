@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm, Textarea, DateTimeField
+from django.forms import Textarea
 from .models import Review
 
 

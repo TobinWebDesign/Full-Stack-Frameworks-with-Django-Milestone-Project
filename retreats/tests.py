@@ -1,5 +1,5 @@
 from django.test import TestCase, Client
-from django.urls import reverse, resolve
+from django.urls import reverse
 
 # Create your tests here.
 
@@ -16,6 +16,7 @@ class TestCategory(TestCase):
         cattwo = Category.objects.get(name='cattwo')
         self.assertEqual(catone.get_friendly_name(), 'First Category')
         self.assertEqual(cattwo.get_friendly_name(), 'cattwo')
+
 
 class TestViews(TestCase):
 #test_main_view_GET test is displayed on the main url in main_tour_folder

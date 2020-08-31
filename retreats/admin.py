@@ -3,6 +3,7 @@ from .models import Retreat, Category
 
 # Register your models here.
 
+
 class RetreatAdmin(admin.ModelAdmin):
     list_display = (
         'sku',
@@ -14,6 +15,7 @@ class RetreatAdmin(admin.ModelAdmin):
     )
 
     ordering = ('sku',)
+
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (

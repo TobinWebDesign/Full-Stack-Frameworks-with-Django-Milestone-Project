@@ -6,6 +6,7 @@ from .forms import ClassForm
 
 # Create your views here.
 
+
 def all_classes(request):
     """ A view to show all classes """
 
@@ -16,6 +17,7 @@ def all_classes(request):
     }
 
     return render(request, 'classes/classes.html', context)
+
 
 def class_detail(request, class_id):
     """ A view to show idividual classs """
