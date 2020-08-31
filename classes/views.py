@@ -51,3 +51,33 @@ def add_class(request):
     }
 
     return render(request, template, context)
+
+@login_required
+def edit_class(request, class_id):
+    """ Edit a class in the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    class_detail = get_object_or_404(Class, pk=class_id)
+    print(class_detail)
+    print(class_id)
+    if request.method == 'POST':
+        form = ClassForm(request.POST, request.FILES, instance=class_detail)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Yey! Successfully updated class!')
+            return redirect(reverse('classes'))
+        else:
+            messages.error(request, 'Opps! Failed to update class. Please ensure the form is valid.')
+    else:
+        form = ClassForm(instance=class_detail)
+        messages.info(request, f'You are editing {class_detail.name}')
+
+    template = 'classes/edit_class.html'
+    context = {
+        'form': form,
+        'class_detail': class_detail,
+    }
+    print(class_detail)
+    return render(request, template, context)
