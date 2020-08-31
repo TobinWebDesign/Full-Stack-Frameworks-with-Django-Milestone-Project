@@ -178,12 +178,12 @@ Below the Latest Recipes are desplayed.
 <summary>Retreat Wireframes</summary>
 
 <p align="center">
-    <img height="350" src="static/images/retreats.png" alt="retreat page desktop wireframe">
+    <img height="350" src="wireframes/images/mobileretreatspage.png" alt="retreat page mobile wireframe">
 </p>
 <p align="center">
-    <img height="350" src="static/images/retreats.png" alt="retreat page desktop wireframe">
+    <img height="350" src="wireframes/images/retreats.png" alt="retreat page desktop wireframe">
 </p>
-
+</details>
 
 ***
 
@@ -212,7 +212,7 @@ A simple page as normal inheriting the navbar and footer from the base.html file
 <summary>Add retreats/reviews/details Wireframes</summary>
 
 <p align="center">
-    <img height="350" src="wireframes/images/mobileaddeditpages.png" alt="Add retreats/reviews/details page mobile wireframe">
+    <img height="350" src="wireframes/images/mobileaddeditpage.png" alt="Add retreats/reviews/details page mobile wireframe">
 </p>
 
 <p align="center">
@@ -246,7 +246,7 @@ A simple page as normal inheriting the navbar and footer from the base.html file
 <summary>Edit Wireframes</summary>
 
 <p align="center">
-    <img height="350" src="wireframes/images/mobileaddeditpages.png" alt="Edit page mobile wireframe">
+    <img height="350" src="wireframes/images/mobileaddeditpage.png" alt="Edit page mobile wireframe">
 </p>
 
 <p align="center">
@@ -263,7 +263,7 @@ A simple page as normal inheriting the navbar and footer from the base.html file
 <summary>Checkout Wireframes</summary>
 
 <p align="center">
-    <img height="350" src="wireframes/images/mobilecheckoutpage.png.png" alt="Checkout page mobile wireframe">
+    <img height="350" src="wireframes/images/mobilecheckoutpage.png" alt="Checkout page mobile wireframe">
 </p>
 
 <p align="center">
@@ -285,6 +285,23 @@ A simple page as normal inheriting the navbar and footer from the base.html file
 
 <p align="center">
 <img height="350" src="wireframes/images/reviews.png" alt="reviews page desktop wireframe">
+</p>
+</details>
+
+***
+
+* reviews Page:
+
+
+<details>
+<summary>timetable Wireframes</summary>
+
+<p align="center">
+    <img height="350" src="wireframes/images/mobiletimetablepage.png" alt="timetabel page mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="wireframes/images/timetable.png" alt="timetable page desktop wireframe">
 </p>
 </details>
 
@@ -494,7 +511,7 @@ Therefore to run the test and check the output, you need to remove or comment th
   - Output:
 
 ```
-<img height="350" src="static/images/autotestresults.JPG" alt="screenshot of automatic test output">
+<img src="static/images/autotestresults.JPG" alt="screenshot of automatic test output">
 
 [Back to Top](#table-of-contents)
 
