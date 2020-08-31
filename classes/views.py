@@ -77,7 +77,19 @@ def edit_class(request, class_id):
     template = 'classes/edit_class.html'
     context = {
         'form': form,
-        'class_detail': class_detail,
+        'class': class_detail,
     }
     print(class_detail)
     return render(request, template, context)
+
+@login_required
+def delete_class(request, class_id):
+    """ Delete a class from the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+        
+    class_detail = get_object_or_404(Class, pk=class_id)
+    class_detail.delete()
+    messages.success(request, 'Yoga class deleted!')
+    return redirect(reverse('classes'))
