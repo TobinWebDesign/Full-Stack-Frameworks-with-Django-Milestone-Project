@@ -314,11 +314,8 @@ A simple page as normal inheriting the navbar and footer from the base.html file
 * HTML, CSS & Python ~ core languages used to create this multi-page CRUD application.
 * <a href="https://getbootstrap.com/"> Bootstrap Framework</a> ~ Used as the core structuring layout for the application, ensuring mobile-first design and screen size fluidity.
 * Bootstrap's <a href="https://getbootstrap.com/docs/4.3/getting-started/introduction/#js">Imported Javascript & JQuery</a> ~ For the Modal and Responsive Navbar expand & collapse functionality.
-* <a href="https://www.jetbrains.com/pycharm/">PyCharm IDE</a> ~ PyCharm was used as the preferred IDE for this project.
-* PyCharm built-in Terminal ~ Used to commit to local repository and further push to Github Repo ensuring adequate version
-controlling throughout the life-cycle of the project build.
 * <a href="https://git-scm.com/">Git</a> ~ Installed on local device and integrated to PyCharm as a Plugin to enable version controlling.
-* <a href="https://github.com/auxfuse/Milestone1">Github</a> ~ Used to host the repository of all previous versions of the build and linked to Heroku to push the latest changes to the deployed build version held there.
+* <a href="https://github.com/tobinwebdesign">Github</a> ~ Used to host the repository of all previous versions of the build and linked to Heroku to push the latest changes to the deployed build version held there.
 * <a href="https://www.heroku.com/">Heroku</a> ~ A cloud platform as a service enabling deployment for this CRUD application.
 
 #### Tools Used:
@@ -439,12 +436,12 @@ Testing toasts:
 
 #### Retreat/class  Detail Page (
 
-* If logged in user is either a superuser or is the authorised site owner they will have the option to edit or delete. Check that the edit and delete coloured text is displayed when logged in. If they edit and delete text is visible, check that the edit campspot links to the correct campspot id. 
+* If logged in user is either a superuser or is the authorised site owner they will have the option to edit or delete.
 * If not logged in as a superuser you do not have the authority to edit or delete, check that the edit and delete options are not visible. 
 * Click on Book Now button to test success ans warning toasts are displayed. 
 * If more than one item is added to the cart the total price is updated. 
 * Test that the keep looking link gives the option to add additional bookings.
-*  Check that the "Go to Secure Checkout" link on the success toast correctly renders the booking session on the checkout page.
+* Check that the "Go to Secure Checkout" link on the success toast correctly renders the booking session on the checkout page.
 
 #### Checkout page (checkout.html)
 
@@ -468,7 +465,7 @@ Testing toasts:
 * When logged out confirmmation that the register form is displayed as expected.
 * Fill in the form with a username/ email address already in the database, confirm that the user is informed that the username already exists. 
 * Confirmation that the email input form will show an error when an non email is used.
-* Fill in password that is less than 8 characters and check the response will be " This password is too short. It must contain at least 8 characters."
+* Confirmation that password less than 8 charactors will show an error.
 
 #### Login Page
 * Reload the login page, confirm that the message for a new account is not visible.
@@ -512,11 +509,6 @@ Therefore to run the test and check the output, you need to remove or comment th
 
 [Back to Top](#table-of-contents)
 
-#### Defensive Design
-
-Defensive design for this application was...
-
-## Deployment
 
 # Deployment
 
@@ -566,6 +558,8 @@ Once instances of these items exist in your database your heroku site will run a
 
 * Detail credits
 * Photo by Elly Fairytale from Pexels
+* Majority of the code is recycled from the Code Institue Lectures.
+ 
 
 [Back to Top](#table-of-contents)
 
